@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="ComportementsModification.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="1158" topLine="0" />
+	</File>
+	<File name="ComportementsModification.hpp" open="0" top="0" tabpos="4">
+		<Cursor position="1159" topLine="12" />
+	</File>
+	<File name="ComportementsSelector.cpp" open="0" top="0" tabpos="6">
+		<Cursor position="1006" topLine="41" />
+	</File>
+	<File name="ComportementsSelector.hpp" open="0" top="0" tabpos="5">
+		<Cursor position="733" topLine="0" />
+	</File>
+	<File name="CourbesViewer.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="698" topLine="3" />
+	</File>
+	<File name="CourbesViewer.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="732" topLine="0" />
+	</File>
+	<File name="EntityModification.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="829" topLine="27" />
+	</File>
+	<File name="EntityModification.hpp" open="0" top="0" tabpos="4">
+		<Cursor position="254" topLine="9" />
+	</File>
+	<File name="EntitySelector.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="1828" topLine="28" />
+	</File>
+	<File name="EntitySelector.hpp" open="0" top="0" tabpos="4">
+		<Cursor position="286" topLine="0" />
+	</File>
+	<File name="EnvironementViewer.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="486" topLine="0" />
+	</File>
+	<File name="EnvironementViewer.hpp" open="0" top="0" tabpos="2">
+		<Cursor position="1231" topLine="27" />
+	</File>
+	<File name="MainWindows.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="4463" topLine="18" />
+	</File>
+	<File name="MainWindows.hpp" open="0" top="0" tabpos="2">
+		<Cursor position="537" topLine="13" />
+	</File>
+	<File name="Pile.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="1799" topLine="42" />
+	</File>
+	<File name="PushButtonIndex.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="1099" topLine="6" />
+	</File>
+	<File name="QSFMLCanvas.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="3339" topLine="70" />
+	</File>
+	<File name="QSFMLCanvas.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="183" topLine="41" />
+	</File>
+	<File name="Vector.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="1660" topLine="0" />
+	</File>
+	<File name="WindowDock.cpp" open="0" top="0" tabpos="4">
+		<Cursor position="3852" topLine="76" />
+	</File>
+	<File name="WindowDock.hpp" open="0" top="0" tabpos="3">
+		<Cursor position="64" topLine="0" />
+	</File>
+	<File name="comportements.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="116" topLine="0" />
+	</File>
+	<File name="entity.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="914" topLine="3" />
+	</File>
+	<File name="entity.hpp" open="0" top="0" tabpos="3">
+		<Cursor position="1960" topLine="40" />
+	</File>
+	<File name="entity_aff.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="427" topLine="0" />
+	</File>
+	<File name="entity_aff.hpp" open="0" top="0" tabpos="6">
+		<Cursor position="697" topLine="0" />
+	</File>
+	<File name="environement.cpp" open="0" top="0" tabpos="2">
+		<Cursor position="8714" topLine="245" />
+	</File>
+	<File name="environement.hpp" open="0" top="0" tabpos="1">
+		<Cursor position="1896" topLine="28" />
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="1">
+		<Cursor position="89" topLine="0" />
+	</File>
+	<File name="map.hpp" open="0" top="0" tabpos="1">
+		<Cursor position="1887" topLine="24" />
+	</File>
+	<File name="reaction.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="4084" topLine="0" />
+	</File>
+	<File name="reaction.hpp" open="0" top="0" tabpos="6">
+		<Cursor position="1281" topLine="16" />
+	</File>
+	<File name="test" open="0" top="0" tabpos="7">
+		<Cursor position="178" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

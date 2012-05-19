@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<Environement SizeX="100" SizeY="100" PAS_DEPLACEMENT="10" >
+	<Entity Nom="Lapin" DemieVie="0" >
+		<Description>Desciption</Description>
+		<Image>images/1.png</Image>
+		<Couleur R="223" G="211" B="24"/>
+		<Parent>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Lapin Mal" DemieVie="300" >
+		<Description>Desciption</Description>
+		<Image>/home/maxime/Bureau/VieArtificielle/ArtϕCiel.0.8/images/lapin_B.png</Image>
+		<Couleur R="0" G="16" B="163"/>
+		<Parent>
+			<Nom>Lapin</Nom>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Lapin femelle" DemieVie="300" >
+		<Description>Desciption</Description>
+		<Image>/home/maxime/Bureau/VieArtificielle/ArtϕCiel.0.8/images/lapin_R.png</Image>
+		<Couleur R="197" G="1" B="203"/>
+		<Parent>
+			<Nom>Lapin</Nom>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Bébé Lapin" DemieVie="200" >
+		<Description>Desciption</Description>
+		<Image>/home/maxime/Bureau/VieArtificielle/ArtϕCiel.0.8/images/lapin.png</Image>
+		<Couleur R="255" G="255" B="255"/>
+		<Parent>
+			<Nom>Lapin</Nom>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Femelle Pleine" DemieVie="200" >
+		<Description>Desciption</Description>
+		<Image>/home/maxime/Bureau/VieArtificielle/ArtϕCiel.0.8/images/lapin_R2.png</Image>
+		<Couleur R="145" G="0" B="121"/>
+		<Parent>
+			<Nom>Lapin femelle</Nom>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Mur" DemieVie="0" >
+		<Description>Description</Description>
+		<Image>/home/maxime/Bureau/VieArtificielle/ArtϕCiel.0.8/images/f.png</Image>
+		<Couleur R="42" G="70" B="40"/>
+		<Parent>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="0" />
+			<Case X="1" Y="0" Val="0" />
+			<Case X="2" Y="0" Val="0" />
+			<Case X="0" Y="1" Val="0" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="0" />
+			<Case X="0" Y="2" Val="0" />
+			<Case X="1" Y="2" Val="0" />
+			<Case X="2" Y="2" Val="0" />
+		</Deplacement>
+	</Entity>
+	<Reaction Nom="Reproduction Lapin" Type="2" Proba="45" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="Lapin Mal" UseEnfants="0" />
+			<Entity Nom="Lapin femelle" UseEnfants="0" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Lapin Mal" />
+			<Entity Nom="Femelle Pleine" />
+		</Produits>
+	</Reaction>
+	<Reaction Nom="Bébé lapin grandis Mal" Type="2" Proba="3" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="Bébé Lapin" UseEnfants="0" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Lapin Mal" />
+		</Produits>
+	</Reaction>
+	<Reaction Nom="bébé lapin grandis Femelle" Type="2" Proba="5" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="Bébé Lapin" UseEnfants="0" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Lapin femelle" />
+		</Produits>
+	</Reaction>
+	<Reaction Nom="Naissance bébé lapin" Type="2" Proba="9" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="Femelle Pleine" UseEnfants="0" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Lapin femelle" />
+			<Entity Nom="Bébé Lapin" />
+		</Produits>
+	</Reaction>
+</Environement>

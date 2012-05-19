@@ -1,0 +1,412 @@
+#include "reaction.hpp"
+#include <sstream>
+
+bool contour;
+static int nb;
+////////////////////////////////////// REACTION ///////////////////////////////////////////////////////
+Reaction::Reaction(string n,double prob, string desc)
+{
+    if (n=="")
+    {
+        stringstream out;
+        out<<"Reaction_"<<nb;
+        nom=out.str();
+    }
+    else
+        nom=n;
+    probabilite=prob;
+    description=desc;
+    Type=REACTION;
+    initialise=false;
+    ++nb;
+};
+
+//////////////////////////////////////////// SEMIE SITUEE //////////////////////////////////////////////
+SemieSitue::SemieSitue(string n,double prob, string desc) : Reaction (n,prob,desc)
+{
+    Type=SEMIESITUE;
+};
+
+#define React(x,ymin) \
+if ((E=CarteCpy[ymin][x])!=NULL) 
+                    {
+                        if ((P=E->GetParent())!=NULL) // on récupere L'Entity associée
+                        {
+                            if (find(Reactifs.begin(),Reactifs.end(),P) != Reactifs.end()) //si l'entitée fait partie de la réaction
+                            {
+                                if (FindNb[P->GetIndex()].NonRecursif < Reactif_Nb[P->GetIndex()].NonRecursif)
+                                {
+                                    ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                    ++(FindNb[P->GetIndex()].NonRecursif);
+                                }
+                                else if (FindNb[P->GetIndex()].Recursif < Reactif_Nb[P->GetIndex()].Recursif)
+                                {
+                                    ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                    ++(FindNb[P->GetIndex()].Recursif);
+                                }
+                            }
+                            else
+                            {
+                                //on verifie si l'entitée à un parent impliqué dans la réaction
+                                bool implique = false;
+                                const unsigned int _size=Reactifs.size();
+                                for (unsigned int i=0;i<_size && !implique;++i)
+                                    if (FindNb[Reactifs[i]->GetIndex()].Recursif < Reactif_Nb[Reactifs[i]->GetIndex()].Recursif)
+                                        if (Reactifs[i]->IsOrIsParentOf(P))
+                                        {
+                                            implique = true;
+                                            ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                            ++(FindNb[Reactifs[i]->GetIndex()].Recursif);
+                                        }
+
+                            }
+                        }
+                    }
+                    else //si la case est vide
+                        Dispo.push_back(Vector2<unsigned int>(x,ymin));
+void SemieSitue::Run(const unsigned int X,const unsigned int Y)
+{
+    if (!initialise)
+        init();
+    if (rand100()<probabilite)
+    {
+        vector<sf::Vector2<unsigned int> > ToPop;
+        vector<Vector2<unsigned int> > Dispo;
+
+        Entity_Aff* E=NULL;
+        Entity* P=NULL;
+
+        //map<Entity* , map<bool,unsigned int> > FindNb;
+        vector< rea > FindNb;
+        FindNb.resize(Entity::GetMaxIndex());
+
+        /*for (unsigned int i=0;i<Entity::GetMaxIndex();++i)
+        {
+            FindNb[i].Recursif=0;
+            FindNb[i].NonRecursif=0;
+        }*/
+
+        int ymin=Y-PROFONCDEUR_REATION/2;
+        int xmin=X-PROFONCDEUR_REATION/2;
+        int ymax=Y+PROFONCDEUR_REATION/2;
+        int xmax=X+PROFONCDEUR_REATION/2;
+
+        if (contour)
+        {
+            if (xmax>=(int)SizeX) xmax=SizeX-1;
+            if (ymin<0)ymin=0;
+            if (xmin<0) xmin=0;
+            if (ymax>=(int)SizeY) ymax=SizeY-1;
+
+
+            while (ymin<=ymax)
+            {
+                for (unsigned int x=(unsigned int)xmin;x<=(unsigned int)xmax;++x)//on parcout les voisins
+                {
+                    if ((E=CarteCpy[ymin][x])!=NULL) //on récupere l'Entity_Aff
+                    {
+                        if ((P=E->GetParent())!=NULL) // on récupere L'Entity associée
+                        {
+                            if (find(Reactifs.begin(),Reactifs.end(),P) != Reactifs.end()) //si l'entitée fait partie de la réaction
+                            {
+                                if (FindNb[P->GetIndex()].NonRecursif < Reactif_Nb[P->GetIndex()].NonRecursif)
+                                {
+                                    ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                    ++(FindNb[P->GetIndex()].NonRecursif);
+                                }
+                                else if (FindNb[P->GetIndex()].Recursif < Reactif_Nb[P->GetIndex()].Recursif)
+                                {
+                                    ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                    ++(FindNb[P->GetIndex()].Recursif);
+                                }
+                            }
+                            else
+                            {
+                                //on verifie si l'entitée à un parent impliqué dans la réaction
+                                bool implique = false;
+                                const unsigned int _size=Reactifs.size();
+                                for (unsigned int i=0;i<_size && !implique;++i)
+                                    if (FindNb[Reactifs[i]->GetIndex()].Recursif < Reactif_Nb[Reactifs[i]->GetIndex()].Recursif)
+                                        if (Reactifs[i]->IsOrIsParentOf(P))
+                                        {
+                                            implique = true;
+                                            ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                            ++(FindNb[Reactifs[i]->GetIndex()].Recursif);
+                                        }
+
+                            }
+                        }
+                    }
+                    else //si la case est vide
+                        Dispo.push_back(Vector2<unsigned int>(x,ymin));
+                }
+                ++ymin;
+            }
+        }
+        else // si il y a pas de contour
+        {
+            if (xmax>=(int)SizeX) xmax-=SizeX;
+            if (xmin<0) xmin+=SizeX;
+            if (ymin<0)ymin+=SizeY;
+            if (ymax>=(int)SizeY) ymax-=SizeY;
+
+
+            while (ymin!=ymax)
+            {
+                int x=xmin;
+                while(x != xmax)
+                {
+                    if ((E=CarteCpy[ymin][x])!=NULL) //on récupere l'Entity_Aff
+                    {
+                        if ((P=E->GetParent())!=NULL) // on récupere L'Entity associée
+                        {
+                            if (find(Reactifs.begin(),Reactifs.end(),P) != Reactifs.end()) //si l'entitée fait partie de la réaction
+                            {
+                                if (FindNb[P->GetIndex()].NonRecursif < Reactif_Nb[P->GetIndex()].NonRecursif)
+                                {
+                                    ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                    ++(FindNb[P->GetIndex()].NonRecursif);
+                                }
+                                else if (FindNb[P->GetIndex()].Recursif < Reactif_Nb[P->GetIndex()].Recursif)
+                                {
+                                    ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                    ++(FindNb[P->GetIndex()].Recursif);
+                                }
+                            }
+                            else
+                            {
+                                //on verifie si l'entitée à un parent impliqué dans la réaction
+                                bool implique = false;
+                                const unsigned int _size=Reactifs.size();
+                                for (unsigned int i=0;i<_size && !implique;++i)
+                                    if (FindNb[Reactifs[i]->GetIndex()].Recursif < Reactif_Nb[Reactifs[i]->GetIndex()].Recursif)
+                                        if (Reactifs[i]->IsOrIsParentOf(P))
+                                        {
+                                            implique = true;
+                                            ToPop.push_back(Vector2<unsigned int> (x,ymin));
+                                            ++(FindNb[Reactifs[i]->GetIndex()].Recursif);
+                                        }
+
+                            }
+                        }
+                    }
+                    else //si la case est vide
+                        Dispo.push_back(Vector2<unsigned int>(x,ymin));
+
+                    if (++x >= (int)SizeX)
+                        x-=SizeX;
+                }
+                if(++ymin>=(int)SizeY)
+                    ymin-=SizeY;
+            }
+        }
+
+        //si on a tout
+        const unsigned int size_prod=Produits.size();
+        const unsigned int size_ToPop=ToPop.size();
+        unsigned int size_Dispo= Dispo.size();
+        if (size_prod <= size_ToPop + size_Dispo) // si il y a assez de place pour tous les produits
+        {
+            bool ok = true;
+            for (int i = FindNb.size()-1;i<=0;--i)
+            {
+                ok = ok && FindNb[i].NonRecursif >= Reactif_Nb[i].NonRecursif && FindNb[i].Recursif >= Reactif_Nb[i].Recursif;
+            }
+            if (ok)
+            { // si on a tout se qu'il faut
+                for (unsigned int i=0;i<size_ToPop;++i)
+                {
+                    Carte.Pop(ToPop[i].x,ToPop[i].y);
+                    CarteCpy[ToPop[i].y][ToPop[i].x]=NULL;
+                    Dispo.push_back(ToPop[i]);
+                }
+                ///random_shuffle(Dispo.begin(),Dispo.end());
+
+                for (unsigned int i=0;i<size_prod;++i)//pour tous les resultat
+                {
+                    ///TODO Remplacer un element (lapin) par le type exacte qui à été pris parmis l'arbre d'héritage (bébé lapin)
+                    Carte.Push(Entity_Aff(Produits[i]),Dispo[i].x,Dispo[i].y);
+                    CarteCpy[Dispo[i].y][Dispo[i].x]=NULL;
+                }
+            }
+        }
+    }
+};
+
+void SemieSitue::init()
+{
+    const unsigned int _size=Reactifs.size();
+    Reactif_Nb.clear();
+    Reactif_Nb.resize(_size);
+
+    /*for (unsigned int i=0;i<Entity::GetMaxIndex();++i)
+    {
+        Reactif_Nb[0].Recursif=0;
+        Reactif_Nb[0].NonRecursif=0;
+    }*/
+
+    for (unsigned int i=0;i<_size;++i)
+        cout<<Reactifs[i]->GetIndex()<<" "<<Reactifs[i]->GetNom()<<endl;
+
+    for (unsigned int i=0;i<_size;++i)
+        if (Reactif_use_parent[i])
+            ++(Reactif_Nb[Reactifs[i]->GetIndex()].Recursif);
+        else
+            ++(Reactif_Nb[Reactifs[i]->GetIndex()].NonRecursif);
+
+    initialise=true;
+};
+
+void SemieSitue::Write(FILE* F)
+{
+    if (F)
+    {
+        stringstream out;
+        out<<"\t<Reaction Nom=\""<<nom<<"\" Type=\""<<Type<<"\" Proba=\""<<probabilite<<"\" >\n";
+            out<<"\t\t<Description>"<<description<<"</Description>\n";
+
+            out<<"\t\t<Reactifs>\n";
+                for(unsigned int i=0,_size=Reactifs.size();i<_size;++i)
+                    out<<"\t\t\t<Entity Nom=\""<<Reactifs[i]->GetNom()<<"\" UseEnfants=\""<<(bool)Reactif_use_parent[i]<<"\" />\n";
+            out<<"\t\t</Reactifs>\n";
+
+            out<<"\t\t<Produits>\n";
+                for(unsigned int i=0,_size=Produits.size();i<_size;++i)
+                    out<<"\t\t\t<Entity Nom=\""<<Produits[i]->GetNom()<<"\" />\n";
+            out<<"\t\t</Produits>\n";
+
+        out<<"\t</Reaction>\n";
+
+        fprintf(F,"%s",out.str().c_str());
+    }
+    else
+        cout<<"Erreur dans l'écriture de la réaction Semie Située "<<nom<<" Fichier foireux"<<endl;
+}
+///////////////////////////////////////// ABSOLUE /////////////////////////////////////////////////////
+/*
+Absolue::Absolue(string n,double prob, string desc) : Reaction (n,prob,desc)
+{
+    Type=ABSOLUE;
+    for (unsigned int i=0;i< PROFONCDEUR_REATION;++i)
+        for (unsigned int j=0; j<PROFONCDEUR_REATION;++j)
+        {
+            Reactifs[i][j]=NULL;
+            Produits[i][j]=NULL;
+            Reactif_use_parent[i][j]=false;
+        }
+};
+
+void Absolue::SetReactif(Entity* r[PROFONCDEUR_REATION][PROFONCDEUR_REATION])
+{
+    for (unsigned int i=0;i< PROFONCDEUR_REATION;++i)
+        for (unsigned int j=0; j<PROFONCDEUR_REATION;++j)
+            Reactifs[i][j]=r[i][j];
+    initialise=false;
+};
+
+void Absolue::SetProduit(Entity* p[PROFONCDEUR_REATION][PROFONCDEUR_REATION])
+{
+    for (unsigned int i=0;i< PROFONCDEUR_REATION;++i)
+        for (unsigned int j=0; j<PROFONCDEUR_REATION;++j)
+            Produits[i][j]=p[i][j];
+    initialise=false;
+
+};
+
+void Absolue::Run(const unsigned int X,const unsigned int Y)
+{
+    if (rand100()<probabilite)
+    {
+        bool ok=true;
+
+       // int ymin=Y-PROFONCDEUR_REATION/2;
+        //int xmin=X-PROFONCDEUR_REATION/2;
+        int ymin=Y;
+        int xmin=X;
+        //int ymax=Y+PROFONCDEUR_REATION/2;
+        //int xmax=X+PROFONCDEUR_REATION/2;
+
+        //if (xmax>=(int)SizeX) xmax=SizeX-1;
+        if (ymin<0)ymin=0;
+        if (xmin<0) xmin=0;
+        //if (ymax>=(int)SizeY) ymax=SizeY-1;
+        //if (contour)
+        //{
+        //    if (xmax>=(int)SizeX) xmax=SizeX-1;
+        //    if (ymin<0)ymin=0;
+        //    if (xmin<0) xmin=0;
+        //    if (ymax>=(int)SizeY) ymax=SizeY-1;
+        //}
+        //else
+        //{
+        //    if (xmax>=(int)SizeX) xmax-=SizeX;
+        //    if (ymin<0)ymin+=SizeY;
+        //    if (xmin<0) xmin+=SizeX;
+       //     if (ymax>=(int)SizeY) ymax-=SizeY;
+       // }
+
+        for (unsigned int y=0;y<PROFONCDEUR_REATION && ok;++y)
+            for (unsigned int x=0;x<PROFONCDEUR_REATION && ok;++x)
+            {
+                if (Reactifs[y][x] != NULL) //on abesoin d'un reactif
+                {
+                    if (CarteCpy[y+ymin][x+xmin]->GetParent() != Reactifs[y][x]) // si le reactif demandé est pas presont, on va pas plus loin
+                        ok=false;
+                }
+                else if (Produits[y][x] != NULL)//on verifi si on doit ajouter un produit
+                {
+                    if (CarteCpy[y+ymin][x+xmin]!= NULL) // et si il y a de la place de dispo
+                        ok=false;
+                }
+            }
+        if (ok)//on peu faire la reaction (il y a la place et tous les reactifs)
+        {
+            for (unsigned int y=0;y<PROFONCDEUR_REATION && ok;++y)
+                for (unsigned int x=0;x<PROFONCDEUR_REATION && ok;++x)
+                {
+                    if (Reactifs[y][x] != NULL && Produits[y][x] != NULL) //on doit remplace
+                        Carte.Replace(Produits[y][x],x+xmin,y+ymin);
+                    else if (Reactifs[y][x] != NULL && Produits[y][x] == NULL)  //on suprime
+                        Carte.Pop(x+xmin,y+ymin);
+                    else if (Reactifs[y][x]==NULL && Produits[y][x]!=NULL) // on ajoute
+                        Carte.Push(Produits[y][x],x+xmin,y+ymin);
+                    //sino, il y a rin a faire
+                }
+        }
+    }
+};
+
+void Absolue::Write(FILE* F)
+{
+    if (F)
+    {
+        stringstream out;
+            out<<"\t<Reaction Nom=\""<<nom<<"\" Type=\""<<Type<<"\" Proba=\""<<probabilite<<"\" >\n";
+            out<<"\t\t<Description>"<<description<<"</Description>\n";
+
+            out<<"\t\t<Reactifs>\n";
+                for(unsigned int j=0;j<PROFONCDEUR_REATION;++j)
+                    for(unsigned int i=0;i<PROFONCDEUR_REATION;++i)
+                    {
+                        if (Reactifs[j][i] == NULL)
+                            continue;
+                        out<<"\t\t\t<Entity Nom=\""<<Reactifs[j][i]->GetNom()<<"\" UseEnfants=\""<<(bool)Reactif_use_parent[j][i]<<"\" X=\""<<i<<"\" Y=\""<<j<<"\" />\n";
+                    }
+
+            out<<"\t\t</Reactifs>\n";
+            out<<"\t\t<Produits>\n";
+                for(unsigned int j=0;j<PROFONCDEUR_REATION;++j)
+                    for(unsigned int i=0;i<PROFONCDEUR_REATION;++i)
+                    {
+                        if (Produits[j][i] == NULL)
+                            continue;
+                        out<<"\t\t\t<Entity Nom=\""<<Produits[j][i]->GetNom()<<"\" X=\""<<i<<"\" Y=\""<<j<<"\" />\n";
+                    }
+            out<<"\t\t</Produits>\n";
+        out<<"\t</Reaction>\n";
+
+        fprintf(F,"%s",out.str().c_str());
+    }
+    else
+        cout<<"Erreur dans l'écriture de la réaction Absolue "<<nom<<" Fichier foireux"<<endl;
+};*/

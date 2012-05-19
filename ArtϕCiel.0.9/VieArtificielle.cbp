@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="VieArtificielle" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/VieArtificielle" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/VieArtificielle" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+		</Compiler>
+		<Unit filename="ComportementsModification.cpp" />
+		<Unit filename="ComportementsModification.hpp" />
+		<Unit filename="ComportementsSelector.cpp" />
+		<Unit filename="ComportementsSelector.hpp" />
+		<Unit filename="CourbesViewer.cpp" />
+		<Unit filename="CourbesViewer.hpp" />
+		<Unit filename="EntityModification.cpp" />
+		<Unit filename="EntityModification.hpp" />
+		<Unit filename="EntitySelector.cpp" />
+		<Unit filename="EntitySelector.hpp" />
+		<Unit filename="EnvironementViewer.cpp" />
+		<Unit filename="EnvironementViewer.hpp" />
+		<Unit filename="MainWindows.cpp" />
+		<Unit filename="MainWindows.hpp" />
+		<Unit filename="Pile.hpp" />
+		<Unit filename="PushButtonIndex.hpp" />
+		<Unit filename="QSFMLCanvas.cpp" />
+		<Unit filename="QSFMLCanvas.hpp" />
+		<Unit filename="Vector.hpp" />
+		<Unit filename="WindowDock.cpp" />
+		<Unit filename="WindowDock.hpp" />
+		<Unit filename="comportements.cpp" />
+		<Unit filename="comportements.hpp" />
+		<Unit filename="entity.cpp" />
+		<Unit filename="entity.hpp" />
+		<Unit filename="entity_aff.cpp" />
+		<Unit filename="entity_aff.hpp" />
+		<Unit filename="environement.cpp" />
+		<Unit filename="environement.hpp" />
+		<Unit filename="main.cpp" />
+		<Unit filename="map.hpp" />
+		<Unit filename="reaction.cpp" />
+		<Unit filename="reaction.hpp" />
+		<Unit filename="test" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

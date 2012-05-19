@@ -1,0 +1,984 @@
+<?xml version="1.0"?>
+<Environement SizeX="100" SizeY="100" PAS_DEPLACEMENT="10" >
+	<Entity Nom="Lapin" DemieVie="500" >
+		<Description>Description</Description>
+		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/lapin.png</Image>
+		<Couleur R="239" G="215" B="187"/>
+		<Parent>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Loup" DemieVie="1000" >
+		<Description>Description</Description>
+		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/loup.png</Image>
+		<Couleur R="194" G="154" B="88"/>
+		<Parent>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Mur" DemieVie="0" >
+		<Description>Description</Description>
+		<Image>/home/maxime/Bureau/VieArtificielle/ArtϕCiel.0.9/images/f.png</Image>
+		<Couleur R="24" G="170" B="230"/>
+		<Parent>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="0" />
+			<Case X="1" Y="0" Val="0" />
+			<Case X="2" Y="0" Val="0" />
+			<Case X="0" Y="1" Val="0" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="0" />
+			<Case X="0" Y="2" Val="0" />
+			<Case X="1" Y="2" Val="0" />
+			<Case X="2" Y="2" Val="0" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="bébé lapin" DemieVie="300" >
+		<Description>Description</Description>
+		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/lapin_B.png</Image>
+		<Couleur R="56" G="166" B="228"/>
+		<Parent>
+			<Nom>Lapin</Nom>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Bébé loup" DemieVie="200" >
+		<Description>Description</Description>
+		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/loup_F.png</Image>
+		<Couleur R="172" G="3" B="139"/>
+		<Parent>
+			<Nom>Loup</Nom>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="100" />
+			<Case X="1" Y="0" Val="100" />
+			<Case X="2" Y="0" Val="100" />
+			<Case X="0" Y="1" Val="100" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="100" />
+			<Case X="0" Y="2" Val="100" />
+			<Case X="1" Y="2" Val="100" />
+			<Case X="2" Y="2" Val="100" />
+		</Deplacement>
+	</Entity>
+	<Entity Nom="Sang" DemieVie="10" >
+		<Description>Description</Description>
+		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/4.png</Image>
+		<Couleur R="222" G="185" B="26"/>
+		<Parent>
+		</Parent>
+		<Deplacement>
+			<Case X="0" Y="0" Val="0" />
+			<Case X="1" Y="0" Val="0" />
+			<Case X="2" Y="0" Val="0" />
+			<Case X="0" Y="1" Val="0" />
+			<Case X="1" Y="1" Val="0" />
+			<Case X="2" Y="1" Val="0" />
+			<Case X="0" Y="2" Val="0" />
+			<Case X="1" Y="2" Val="0" />
+			<Case X="2" Y="2" Val="0" />
+		</Deplacement>
+	</Entity>
+	<Reaction Nom="reproduction lapin" Type="2" Proba="10" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="Lapin" UseEnfants="0" />
+			<Entity Nom="Lapin" UseEnfants="0" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Lapin" />
+			<Entity Nom="Lapin" />
+			<Entity Nom="bébé lapin" />
+		</Produits>
+	</Reaction>
+	<Reaction Nom="bébé lapin grandis" Type="2" Proba="2" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="bébé lapin" UseEnfants="0" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Lapin" />
+		</Produits>
+	</Reaction>
+	<Reaction Nom="Miam lapin2" Type="2" Proba="10" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="Loup" UseEnfants="0" />
+			<Entity Nom="Loup" UseEnfants="0" />
+			<Entity Nom="Lapin" UseEnfants="1" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Loup" />
+			<Entity Nom="Loup" />
+			<Entity Nom="Bébé loup" />
+		</Produits>
+	</Reaction>
+	<Reaction Nom="Miam lapin" Type="2" Proba="15" >
+		<Description></Description>
+		<Reactifs>
+			<Entity Nom="Loup" UseEnfants="1" />
+			<Entity Nom="Lapin" UseEnfants="1" />
+		</Reactifs>
+		<Produits>
+			<Entity Nom="Loup" />
+			<Entity Nom="Sang" />
+		</Produits>
+	</Reaction>
+	<EntityAff Nom="Lapin" X="66" Y="14" />
+	<EntityAff Nom="Lapin" X="71" Y="15" />
+	<EntityAff Nom="Loup" X="36" Y="16" />
+	<EntityAff Nom="Loup" X="37" Y="16" />
+	<EntityAff Nom="Loup" X="38" Y="16" />
+	<EntityAff Nom="Loup" X="39" Y="16" />
+	<EntityAff Nom="Loup" X="41" Y="16" />
+	<EntityAff Nom="Lapin" X="43" Y="16" />
+	<EntityAff Nom="Lapin" X="65" Y="16" />
+	<EntityAff Nom="Lapin" X="66" Y="16" />
+	<EntityAff Nom="Loup" X="33" Y="17" />
+	<EntityAff Nom="Loup" X="36" Y="17" />
+	<EntityAff Nom="Loup" X="39" Y="17" />
+	<EntityAff Nom="Loup" X="40" Y="17" />
+	<EntityAff Nom="Lapin" X="66" Y="17" />
+	<EntityAff Nom="Lapin" X="67" Y="17" />
+	<EntityAff Nom="Lapin" X="68" Y="17" />
+	<EntityAff Nom="Lapin" X="70" Y="17" />
+	<EntityAff Nom="Lapin" X="71" Y="17" />
+	<EntityAff Nom="Loup" X="28" Y="18" />
+	<EntityAff Nom="Loup" X="34" Y="18" />
+	<EntityAff Nom="Loup" X="36" Y="18" />
+	<EntityAff Nom="Loup" X="40" Y="18" />
+	<EntityAff Nom="Lapin" X="42" Y="18" />
+	<EntityAff Nom="Lapin" X="65" Y="18" />
+	<EntityAff Nom="Lapin" X="66" Y="18" />
+	<EntityAff Nom="Lapin" X="68" Y="18" />
+	<EntityAff Nom="Lapin" X="69" Y="18" />
+	<EntityAff Nom="Lapin" X="70" Y="18" />
+	<EntityAff Nom="Lapin" X="71" Y="18" />
+	<EntityAff Nom="Loup" X="25" Y="19" />
+	<EntityAff Nom="Loup" X="28" Y="19" />
+	<EntityAff Nom="Loup" X="32" Y="19" />
+	<EntityAff Nom="Loup" X="33" Y="19" />
+	<EntityAff Nom="Loup" X="35" Y="19" />
+	<EntityAff Nom="Loup" X="36" Y="19" />
+	<EntityAff Nom="Loup" X="37" Y="19" />
+	<EntityAff Nom="Loup" X="38" Y="19" />
+	<EntityAff Nom="Lapin" X="39" Y="19" />
+	<EntityAff Nom="Lapin" X="42" Y="19" />
+	<EntityAff Nom="Lapin" X="43" Y="19" />
+	<EntityAff Nom="Lapin" X="67" Y="19" />
+	<EntityAff Nom="Lapin" X="68" Y="19" />
+	<EntityAff Nom="Lapin" X="70" Y="19" />
+	<EntityAff Nom="Loup" X="19" Y="20" />
+	<EntityAff Nom="Loup" X="26" Y="20" />
+	<EntityAff Nom="Loup" X="27" Y="20" />
+	<EntityAff Nom="Loup" X="28" Y="20" />
+	<EntityAff Nom="Loup" X="32" Y="20" />
+	<EntityAff Nom="Loup" X="35" Y="20" />
+	<EntityAff Nom="Loup" X="36" Y="20" />
+	<EntityAff Nom="Lapin" X="40" Y="20" />
+	<EntityAff Nom="Lapin" X="42" Y="20" />
+	<EntityAff Nom="Loup" X="43" Y="20" />
+	<EntityAff Nom="Lapin" X="45" Y="20" />
+	<EntityAff Nom="Lapin" X="47" Y="20" />
+	<EntityAff Nom="Lapin" X="64" Y="20" />
+	<EntityAff Nom="Lapin" X="65" Y="20" />
+	<EntityAff Nom="Lapin" X="66" Y="20" />
+	<EntityAff Nom="Lapin" X="67" Y="20" />
+	<EntityAff Nom="Lapin" X="68" Y="20" />
+	<EntityAff Nom="Lapin" X="69" Y="20" />
+	<EntityAff Nom="Lapin" X="70" Y="20" />
+	<EntityAff Nom="Lapin" X="72" Y="20" />
+	<EntityAff Nom="Loup" X="19" Y="21" />
+	<EntityAff Nom="Loup" X="22" Y="21" />
+	<EntityAff Nom="Loup" X="26" Y="21" />
+	<EntityAff Nom="Lapin" X="30" Y="21" />
+	<EntityAff Nom="Loup" X="31" Y="21" />
+	<EntityAff Nom="Loup" X="33" Y="21" />
+	<EntityAff Nom="Lapin" X="36" Y="21" />
+	<EntityAff Nom="Loup" X="37" Y="21" />
+	<EntityAff Nom="Lapin" X="42" Y="21" />
+	<EntityAff Nom="Lapin" X="48" Y="21" />
+	<EntityAff Nom="Lapin" X="66" Y="21" />
+	<EntityAff Nom="Lapin" X="67" Y="21" />
+	<EntityAff Nom="Lapin" X="68" Y="21" />
+	<EntityAff Nom="Lapin" X="69" Y="21" />
+	<EntityAff Nom="Lapin" X="70" Y="21" />
+	<EntityAff Nom="Lapin" X="71" Y="21" />
+	<EntityAff Nom="Lapin" X="73" Y="21" />
+	<EntityAff Nom="Lapin" X="79" Y="21" />
+	<EntityAff Nom="Lapin" X="28" Y="22" />
+	<EntityAff Nom="Loup" X="32" Y="22" />
+	<EntityAff Nom="Loup" X="33" Y="22" />
+	<EntityAff Nom="Lapin" X="35" Y="22" />
+	<EntityAff Nom="Loup" X="36" Y="22" />
+	<EntityAff Nom="Loup" X="37" Y="22" />
+	<EntityAff Nom="Lapin" X="40" Y="22" />
+	<EntityAff Nom="Lapin" X="41" Y="22" />
+	<EntityAff Nom="Loup" X="42" Y="22" />
+	<EntityAff Nom="Lapin" X="67" Y="22" />
+	<EntityAff Nom="Lapin" X="72" Y="22" />
+	<EntityAff Nom="Lapin" X="73" Y="22" />
+	<EntityAff Nom="Lapin" X="78" Y="22" />
+	<EntityAff Nom="Lapin" X="79" Y="22" />
+	<EntityAff Nom="Loup" X="13" Y="23" />
+	<EntityAff Nom="Loup" X="16" Y="23" />
+	<EntityAff Nom="Loup" X="23" Y="23" />
+	<EntityAff Nom="Loup" X="28" Y="23" />
+	<EntityAff Nom="Loup" X="30" Y="23" />
+	<EntityAff Nom="Loup" X="32" Y="23" />
+	<EntityAff Nom="Loup" X="35" Y="23" />
+	<EntityAff Nom="Lapin" X="36" Y="23" />
+	<EntityAff Nom="Lapin" X="44" Y="23" />
+	<EntityAff Nom="Lapin" X="67" Y="23" />
+	<EntityAff Nom="Lapin" X="68" Y="23" />
+	<EntityAff Nom="Lapin" X="73" Y="23" />
+	<EntityAff Nom="Lapin" X="74" Y="23" />
+	<EntityAff Nom="Loup" X="15" Y="24" />
+	<EntityAff Nom="Loup" X="20" Y="24" />
+	<EntityAff Nom="Loup" X="21" Y="24" />
+	<EntityAff Nom="Loup" X="24" Y="24" />
+	<EntityAff Nom="Loup" X="26" Y="24" />
+	<EntityAff Nom="Lapin" X="31" Y="24" />
+	<EntityAff Nom="Loup" X="34" Y="24" />
+	<EntityAff Nom="Lapin" X="39" Y="24" />
+	<EntityAff Nom="Lapin" X="65" Y="24" />
+	<EntityAff Nom="Lapin" X="66" Y="24" />
+	<EntityAff Nom="Lapin" X="67" Y="24" />
+	<EntityAff Nom="Lapin" X="68" Y="24" />
+	<EntityAff Nom="Lapin" X="69" Y="24" />
+	<EntityAff Nom="Lapin" X="72" Y="24" />
+	<EntityAff Nom="Lapin" X="73" Y="24" />
+	<EntityAff Nom="Lapin" X="74" Y="24" />
+	<EntityAff Nom="Lapin" X="75" Y="24" />
+	<EntityAff Nom="Lapin" X="76" Y="24" />
+	<EntityAff Nom="Lapin" X="77" Y="24" />
+	<EntityAff Nom="Lapin" X="79" Y="24" />
+	<EntityAff Nom="Loup" X="7" Y="25" />
+	<EntityAff Nom="Loup" X="8" Y="25" />
+	<EntityAff Nom="Loup" X="9" Y="25" />
+	<EntityAff Nom="Loup" X="10" Y="25" />
+	<EntityAff Nom="Loup" X="11" Y="25" />
+	<EntityAff Nom="Loup" X="15" Y="25" />
+	<EntityAff Nom="Loup" X="25" Y="25" />
+	<EntityAff Nom="Loup" X="29" Y="25" />
+	<EntityAff Nom="Lapin" X="39" Y="25" />
+	<EntityAff Nom="Lapin" X="66" Y="25" />
+	<EntityAff Nom="Lapin" X="67" Y="25" />
+	<EntityAff Nom="Lapin" X="70" Y="25" />
+	<EntityAff Nom="Lapin" X="71" Y="25" />
+	<EntityAff Nom="Lapin" X="74" Y="25" />
+	<EntityAff Nom="Loup" X="9" Y="26" />
+	<EntityAff Nom="Loup" X="10" Y="26" />
+	<EntityAff Nom="Loup" X="11" Y="26" />
+	<EntityAff Nom="Loup" X="12" Y="26" />
+	<EntityAff Nom="Loup" X="13" Y="26" />
+	<EntityAff Nom="Loup" X="26" Y="26" />
+	<EntityAff Nom="Lapin" X="66" Y="26" />
+	<EntityAff Nom="Lapin" X="70" Y="26" />
+	<EntityAff Nom="Lapin" X="71" Y="26" />
+	<EntityAff Nom="Lapin" X="72" Y="26" />
+	<EntityAff Nom="Lapin" X="77" Y="26" />
+	<EntityAff Nom="Loup" X="5" Y="27" />
+	<EntityAff Nom="Loup" X="7" Y="27" />
+	<EntityAff Nom="Loup" X="8" Y="27" />
+	<EntityAff Nom="Loup" X="9" Y="27" />
+	<EntityAff Nom="Loup" X="10" Y="27" />
+	<EntityAff Nom="Loup" X="11" Y="27" />
+	<EntityAff Nom="Loup" X="12" Y="27" />
+	<EntityAff Nom="Loup" X="13" Y="27" />
+	<EntityAff Nom="Loup" X="17" Y="27" />
+	<EntityAff Nom="Loup" X="18" Y="27" />
+	<EntityAff Nom="Lapin" X="22" Y="27" />
+	<EntityAff Nom="Loup" X="23" Y="27" />
+	<EntityAff Nom="Lapin" X="24" Y="27" />
+	<EntityAff Nom="Lapin" X="31" Y="27" />
+	<EntityAff Nom="Lapin" X="33" Y="27" />
+	<EntityAff Nom="Lapin" X="34" Y="27" />
+	<EntityAff Nom="Lapin" X="67" Y="27" />
+	<EntityAff Nom="Lapin" X="68" Y="27" />
+	<EntityAff Nom="Lapin" X="71" Y="27" />
+	<EntityAff Nom="Lapin" X="72" Y="27" />
+	<EntityAff Nom="Lapin" X="73" Y="27" />
+	<EntityAff Nom="Loup" X="6" Y="28" />
+	<EntityAff Nom="Loup" X="7" Y="28" />
+	<EntityAff Nom="Loup" X="8" Y="28" />
+	<EntityAff Nom="Loup" X="9" Y="28" />
+	<EntityAff Nom="Loup" X="10" Y="28" />
+	<EntityAff Nom="Loup" X="11" Y="28" />
+	<EntityAff Nom="Loup" X="12" Y="28" />
+	<EntityAff Nom="Loup" X="14" Y="28" />
+	<EntityAff Nom="Loup" X="15" Y="28" />
+	<EntityAff Nom="Lapin" X="31" Y="28" />
+	<EntityAff Nom="Lapin" X="69" Y="28" />
+	<EntityAff Nom="Lapin" X="72" Y="28" />
+	<EntityAff Nom="Lapin" X="73" Y="28" />
+	<EntityAff Nom="Lapin" X="75" Y="28" />
+	<EntityAff Nom="Lapin" X="76" Y="28" />
+	<EntityAff Nom="Lapin" X="77" Y="28" />
+	<EntityAff Nom="Lapin" X="78" Y="28" />
+	<EntityAff Nom="Loup" X="7" Y="29" />
+	<EntityAff Nom="Loup" X="8" Y="29" />
+	<EntityAff Nom="Loup" X="9" Y="29" />
+	<EntityAff Nom="Loup" X="10" Y="29" />
+	<EntityAff Nom="Loup" X="11" Y="29" />
+	<EntityAff Nom="Loup" X="12" Y="29" />
+	<EntityAff Nom="Loup" X="14" Y="29" />
+	<EntityAff Nom="Lapin" X="17" Y="29" />
+	<EntityAff Nom="Lapin" X="21" Y="29" />
+	<EntityAff Nom="Lapin" X="70" Y="29" />
+	<EntityAff Nom="Lapin" X="71" Y="29" />
+	<EntityAff Nom="Lapin" X="73" Y="29" />
+	<EntityAff Nom="Lapin" X="76" Y="29" />
+	<EntityAff Nom="Loup" X="5" Y="30" />
+	<EntityAff Nom="Loup" X="6" Y="30" />
+	<EntityAff Nom="Loup" X="7" Y="30" />
+	<EntityAff Nom="Loup" X="8" Y="30" />
+	<EntityAff Nom="Loup" X="9" Y="30" />
+	<EntityAff Nom="Loup" X="10" Y="30" />
+	<EntityAff Nom="Loup" X="11" Y="30" />
+	<EntityAff Nom="Loup" X="14" Y="30" />
+	<EntityAff Nom="Loup" X="15" Y="30" />
+	<EntityAff Nom="Lapin" X="16" Y="30" />
+	<EntityAff Nom="Lapin" X="18" Y="30" />
+	<EntityAff Nom="Lapin" X="19" Y="30" />
+	<EntityAff Nom="Loup" X="20" Y="30" />
+	<EntityAff Nom="Lapin" X="23" Y="30" />
+	<EntityAff Nom="Lapin" X="24" Y="30" />
+	<EntityAff Nom="Lapin" X="28" Y="30" />
+	<EntityAff Nom="Lapin" X="65" Y="30" />
+	<EntityAff Nom="Lapin" X="68" Y="30" />
+	<EntityAff Nom="Lapin" X="72" Y="30" />
+	<EntityAff Nom="Lapin" X="73" Y="30" />
+	<EntityAff Nom="Loup" X="5" Y="31" />
+	<EntityAff Nom="Loup" X="6" Y="31" />
+	<EntityAff Nom="Loup" X="7" Y="31" />
+	<EntityAff Nom="Loup" X="8" Y="31" />
+	<EntityAff Nom="Loup" X="9" Y="31" />
+	<EntityAff Nom="Loup" X="10" Y="31" />
+	<EntityAff Nom="Loup" X="11" Y="31" />
+	<EntityAff Nom="Loup" X="12" Y="31" />
+	<EntityAff Nom="Loup" X="13" Y="31" />
+	<EntityAff Nom="Loup" X="14" Y="31" />
+	<EntityAff Nom="Lapin" X="17" Y="31" />
+	<EntityAff Nom="Lapin" X="18" Y="31" />
+	<EntityAff Nom="Lapin" X="24" Y="31" />
+	<EntityAff Nom="Lapin" X="30" Y="31" />
+	<EntityAff Nom="Lapin" X="67" Y="31" />
+	<EntityAff Nom="Lapin" X="71" Y="31" />
+	<EntityAff Nom="Lapin" X="73" Y="31" />
+	<EntityAff Nom="Loup" X="5" Y="32" />
+	<EntityAff Nom="Loup" X="6" Y="32" />
+	<EntityAff Nom="Loup" X="7" Y="32" />
+	<EntityAff Nom="Loup" X="8" Y="32" />
+	<EntityAff Nom="Loup" X="9" Y="32" />
+	<EntityAff Nom="Loup" X="10" Y="32" />
+	<EntityAff Nom="Loup" X="11" Y="32" />
+	<EntityAff Nom="Loup" X="12" Y="32" />
+	<EntityAff Nom="Loup" X="13" Y="32" />
+	<EntityAff Nom="Loup" X="14" Y="32" />
+	<EntityAff Nom="Lapin" X="16" Y="32" />
+	<EntityAff Nom="Lapin" X="17" Y="32" />
+	<EntityAff Nom="Lapin" X="68" Y="32" />
+	<EntityAff Nom="Lapin" X="73" Y="32" />
+	<EntityAff Nom="Lapin" X="74" Y="32" />
+	<EntityAff Nom="Lapin" X="75" Y="32" />
+	<EntityAff Nom="Loup" X="5" Y="33" />
+	<EntityAff Nom="Loup" X="6" Y="33" />
+	<EntityAff Nom="Loup" X="7" Y="33" />
+	<EntityAff Nom="Loup" X="8" Y="33" />
+	<EntityAff Nom="Loup" X="9" Y="33" />
+	<EntityAff Nom="Loup" X="10" Y="33" />
+	<EntityAff Nom="Loup" X="11" Y="33" />
+	<EntityAff Nom="Loup" X="12" Y="33" />
+	<EntityAff Nom="Loup" X="13" Y="33" />
+	<EntityAff Nom="Lapin" X="50" Y="33" />
+	<EntityAff Nom="Lapin" X="53" Y="33" />
+	<EntityAff Nom="Lapin" X="69" Y="33" />
+	<EntityAff Nom="Lapin" X="71" Y="33" />
+	<EntityAff Nom="Lapin" X="73" Y="33" />
+	<EntityAff Nom="Lapin" X="76" Y="33" />
+	<EntityAff Nom="Loup" X="5" Y="34" />
+	<EntityAff Nom="Loup" X="6" Y="34" />
+	<EntityAff Nom="Loup" X="7" Y="34" />
+	<EntityAff Nom="Loup" X="8" Y="34" />
+	<EntityAff Nom="Loup" X="10" Y="34" />
+	<EntityAff Nom="Loup" X="11" Y="34" />
+	<EntityAff Nom="Loup" X="12" Y="34" />
+	<EntityAff Nom="Lapin" X="13" Y="34" />
+	<EntityAff Nom="Lapin" X="50" Y="34" />
+	<EntityAff Nom="Lapin" X="55" Y="34" />
+	<EntityAff Nom="Lapin" X="69" Y="34" />
+	<EntityAff Nom="Lapin" X="72" Y="34" />
+	<EntityAff Nom="Lapin" X="73" Y="34" />
+	<EntityAff Nom="Loup" X="6" Y="35" />
+	<EntityAff Nom="Loup" X="7" Y="35" />
+	<EntityAff Nom="Loup" X="8" Y="35" />
+	<EntityAff Nom="Loup" X="9" Y="35" />
+	<EntityAff Nom="Loup" X="11" Y="35" />
+	<EntityAff Nom="Loup" X="12" Y="35" />
+	<EntityAff Nom="Lapin" X="14" Y="35" />
+	<EntityAff Nom="Lapin" X="65" Y="35" />
+	<EntityAff Nom="Lapin" X="66" Y="35" />
+	<EntityAff Nom="Lapin" X="69" Y="35" />
+	<EntityAff Nom="Lapin" X="70" Y="35" />
+	<EntityAff Nom="Lapin" X="72" Y="35" />
+	<EntityAff Nom="Lapin" X="73" Y="35" />
+	<EntityAff Nom="Lapin" X="75" Y="35" />
+	<EntityAff Nom="Loup" X="7" Y="36" />
+	<EntityAff Nom="Loup" X="8" Y="36" />
+	<EntityAff Nom="Loup" X="9" Y="36" />
+	<EntityAff Nom="Loup" X="10" Y="36" />
+	<EntityAff Nom="Lapin" X="11" Y="36" />
+	<EntityAff Nom="Loup" X="12" Y="36" />
+	<EntityAff Nom="Lapin" X="17" Y="36" />
+	<EntityAff Nom="Lapin" X="55" Y="36" />
+	<EntityAff Nom="Lapin" X="58" Y="36" />
+	<EntityAff Nom="Lapin" X="60" Y="36" />
+	<EntityAff Nom="Lapin" X="64" Y="36" />
+	<EntityAff Nom="Lapin" X="68" Y="36" />
+	<EntityAff Nom="Lapin" X="69" Y="36" />
+	<EntityAff Nom="Lapin" X="70" Y="36" />
+	<EntityAff Nom="Lapin" X="71" Y="36" />
+	<EntityAff Nom="Lapin" X="75" Y="36" />
+	<EntityAff Nom="Lapin" X="3" Y="37" />
+	<EntityAff Nom="Loup" X="9" Y="37" />
+	<EntityAff Nom="Lapin" X="10" Y="37" />
+	<EntityAff Nom="Loup" X="11" Y="37" />
+	<EntityAff Nom="Lapin" X="12" Y="37" />
+	<EntityAff Nom="Lapin" X="14" Y="37" />
+	<EntityAff Nom="Lapin" X="52" Y="37" />
+	<EntityAff Nom="Lapin" X="54" Y="37" />
+	<EntityAff Nom="Lapin" X="56" Y="37" />
+	<EntityAff Nom="Lapin" X="66" Y="37" />
+	<EntityAff Nom="Lapin" X="69" Y="37" />
+	<EntityAff Nom="Lapin" X="72" Y="37" />
+	<EntityAff Nom="Lapin" X="1" Y="38" />
+	<EntityAff Nom="Lapin" X="5" Y="38" />
+	<EntityAff Nom="Lapin" X="9" Y="38" />
+	<EntityAff Nom="Lapin" X="16" Y="38" />
+	<EntityAff Nom="Lapin" X="50" Y="38" />
+	<EntityAff Nom="Lapin" X="51" Y="38" />
+	<EntityAff Nom="Lapin" X="52" Y="38" />
+	<EntityAff Nom="Lapin" X="56" Y="38" />
+	<EntityAff Nom="Lapin" X="58" Y="38" />
+	<EntityAff Nom="Lapin" X="62" Y="38" />
+	<EntityAff Nom="Lapin" X="64" Y="38" />
+	<EntityAff Nom="Lapin" X="70" Y="38" />
+	<EntityAff Nom="Lapin" X="71" Y="38" />
+	<EntityAff Nom="Lapin" X="72" Y="38" />
+	<EntityAff Nom="Lapin" X="75" Y="38" />
+	<EntityAff Nom="Lapin" X="76" Y="38" />
+	<EntityAff Nom="Lapin" X="0" Y="39" />
+	<EntityAff Nom="Lapin" X="1" Y="39" />
+	<EntityAff Nom="Lapin" X="5" Y="39" />
+	<EntityAff Nom="Lapin" X="8" Y="39" />
+	<EntityAff Nom="Lapin" X="11" Y="39" />
+	<EntityAff Nom="Lapin" X="51" Y="39" />
+	<EntityAff Nom="Lapin" X="52" Y="39" />
+	<EntityAff Nom="Lapin" X="53" Y="39" />
+	<EntityAff Nom="Lapin" X="54" Y="39" />
+	<EntityAff Nom="Lapin" X="55" Y="39" />
+	<EntityAff Nom="Lapin" X="56" Y="39" />
+	<EntityAff Nom="Lapin" X="57" Y="39" />
+	<EntityAff Nom="Lapin" X="65" Y="39" />
+	<EntityAff Nom="Lapin" X="68" Y="39" />
+	<EntityAff Nom="Lapin" X="69" Y="39" />
+	<EntityAff Nom="Lapin" X="70" Y="39" />
+	<EntityAff Nom="Lapin" X="71" Y="39" />
+	<EntityAff Nom="Lapin" X="72" Y="39" />
+	<EntityAff Nom="Lapin" X="2" Y="40" />
+	<EntityAff Nom="Lapin" X="3" Y="40" />
+	<EntityAff Nom="Lapin" X="51" Y="40" />
+	<EntityAff Nom="Lapin" X="52" Y="40" />
+	<EntityAff Nom="Lapin" X="53" Y="40" />
+	<EntityAff Nom="Lapin" X="55" Y="40" />
+	<EntityAff Nom="Lapin" X="57" Y="40" />
+	<EntityAff Nom="Lapin" X="58" Y="40" />
+	<EntityAff Nom="Lapin" X="62" Y="40" />
+	<EntityAff Nom="Lapin" X="67" Y="40" />
+	<EntityAff Nom="Lapin" X="68" Y="40" />
+	<EntityAff Nom="Lapin" X="76" Y="40" />
+	<EntityAff Nom="Lapin" X="6" Y="41" />
+	<EntityAff Nom="Lapin" X="51" Y="41" />
+	<EntityAff Nom="Lapin" X="52" Y="41" />
+	<EntityAff Nom="Lapin" X="54" Y="41" />
+	<EntityAff Nom="Lapin" X="55" Y="41" />
+	<EntityAff Nom="Lapin" X="57" Y="41" />
+	<EntityAff Nom="Lapin" X="58" Y="41" />
+	<EntityAff Nom="Lapin" X="61" Y="41" />
+	<EntityAff Nom="Lapin" X="66" Y="41" />
+	<EntityAff Nom="Lapin" X="74" Y="41" />
+	<EntityAff Nom="Lapin" X="3" Y="42" />
+	<EntityAff Nom="Lapin" X="4" Y="42" />
+	<EntityAff Nom="Lapin" X="51" Y="42" />
+	<EntityAff Nom="Lapin" X="52" Y="42" />
+	<EntityAff Nom="Lapin" X="54" Y="42" />
+	<EntityAff Nom="Lapin" X="55" Y="42" />
+	<EntityAff Nom="Lapin" X="56" Y="42" />
+	<EntityAff Nom="Lapin" X="57" Y="42" />
+	<EntityAff Nom="Lapin" X="68" Y="42" />
+	<EntityAff Nom="Lapin" X="70" Y="42" />
+	<EntityAff Nom="Lapin" X="72" Y="42" />
+	<EntityAff Nom="Lapin" X="76" Y="42" />
+	<EntityAff Nom="Lapin" X="5" Y="43" />
+	<EntityAff Nom="Lapin" X="6" Y="43" />
+	<EntityAff Nom="Lapin" X="51" Y="43" />
+	<EntityAff Nom="Lapin" X="52" Y="43" />
+	<EntityAff Nom="Lapin" X="53" Y="43" />
+	<EntityAff Nom="Lapin" X="55" Y="43" />
+	<EntityAff Nom="Lapin" X="57" Y="43" />
+	<EntityAff Nom="Lapin" X="65" Y="43" />
+	<EntityAff Nom="Lapin" X="67" Y="43" />
+	<EntityAff Nom="Lapin" X="71" Y="43" />
+	<EntityAff Nom="Lapin" X="72" Y="43" />
+	<EntityAff Nom="Lapin" X="1" Y="44" />
+	<EntityAff Nom="Lapin" X="3" Y="44" />
+	<EntityAff Nom="Lapin" X="5" Y="44" />
+	<EntityAff Nom="Lapin" X="7" Y="44" />
+	<EntityAff Nom="Lapin" X="50" Y="44" />
+	<EntityAff Nom="Lapin" X="51" Y="44" />
+	<EntityAff Nom="Lapin" X="52" Y="44" />
+	<EntityAff Nom="Lapin" X="53" Y="44" />
+	<EntityAff Nom="Lapin" X="55" Y="44" />
+	<EntityAff Nom="Lapin" X="56" Y="44" />
+	<EntityAff Nom="Lapin" X="57" Y="44" />
+	<EntityAff Nom="Lapin" X="58" Y="44" />
+	<EntityAff Nom="Lapin" X="60" Y="44" />
+	<EntityAff Nom="Lapin" X="66" Y="44" />
+	<EntityAff Nom="Lapin" X="69" Y="44" />
+	<EntityAff Nom="Lapin" X="76" Y="44" />
+	<EntityAff Nom="Lapin" X="0" Y="45" />
+	<EntityAff Nom="Lapin" X="52" Y="45" />
+	<EntityAff Nom="Lapin" X="53" Y="45" />
+	<EntityAff Nom="Lapin" X="54" Y="45" />
+	<EntityAff Nom="Lapin" X="55" Y="45" />
+	<EntityAff Nom="Lapin" X="56" Y="45" />
+	<EntityAff Nom="Lapin" X="57" Y="45" />
+	<EntityAff Nom="Lapin" X="59" Y="45" />
+	<EntityAff Nom="Lapin" X="63" Y="45" />
+	<EntityAff Nom="Lapin" X="66" Y="45" />
+	<EntityAff Nom="Lapin" X="70" Y="45" />
+	<EntityAff Nom="Lapin" X="50" Y="46" />
+	<EntityAff Nom="Lapin" X="51" Y="46" />
+	<EntityAff Nom="Lapin" X="52" Y="46" />
+	<EntityAff Nom="Lapin" X="54" Y="46" />
+	<EntityAff Nom="Lapin" X="55" Y="46" />
+	<EntityAff Nom="Lapin" X="56" Y="46" />
+	<EntityAff Nom="Lapin" X="58" Y="46" />
+	<EntityAff Nom="Lapin" X="64" Y="46" />
+	<EntityAff Nom="Lapin" X="72" Y="46" />
+	<EntityAff Nom="Lapin" X="50" Y="47" />
+	<EntityAff Nom="Lapin" X="51" Y="47" />
+	<EntityAff Nom="Lapin" X="52" Y="47" />
+	<EntityAff Nom="Lapin" X="53" Y="47" />
+	<EntityAff Nom="Lapin" X="54" Y="47" />
+	<EntityAff Nom="Lapin" X="55" Y="47" />
+	<EntityAff Nom="Lapin" X="57" Y="47" />
+	<EntityAff Nom="Lapin" X="62" Y="47" />
+	<EntityAff Nom="Lapin" X="69" Y="47" />
+	<EntityAff Nom="Lapin" X="51" Y="48" />
+	<EntityAff Nom="Lapin" X="53" Y="48" />
+	<EntityAff Nom="Lapin" X="54" Y="48" />
+	<EntityAff Nom="Lapin" X="55" Y="48" />
+	<EntityAff Nom="Lapin" X="57" Y="48" />
+	<EntityAff Nom="Lapin" X="72" Y="48" />
+	<EntityAff Nom="Lapin" X="52" Y="49" />
+	<EntityAff Nom="Lapin" X="53" Y="49" />
+	<EntityAff Nom="Lapin" X="54" Y="49" />
+	<EntityAff Nom="Lapin" X="55" Y="49" />
+	<EntityAff Nom="Lapin" X="56" Y="49" />
+	<EntityAff Nom="Lapin" X="58" Y="49" />
+	<EntityAff Nom="Lapin" X="69" Y="49" />
+	<EntityAff Nom="Lapin" X="70" Y="49" />
+	<EntityAff Nom="Lapin" X="74" Y="49" />
+	<EntityAff Nom="Lapin" X="76" Y="49" />
+	<EntityAff Nom="Lapin" X="50" Y="50" />
+	<EntityAff Nom="Lapin" X="51" Y="50" />
+	<EntityAff Nom="Lapin" X="52" Y="50" />
+	<EntityAff Nom="Lapin" X="53" Y="50" />
+	<EntityAff Nom="Lapin" X="55" Y="50" />
+	<EntityAff Nom="Lapin" X="56" Y="50" />
+	<EntityAff Nom="Lapin" X="65" Y="50" />
+	<EntityAff Nom="Lapin" X="70" Y="50" />
+	<EntityAff Nom="Lapin" X="73" Y="50" />
+	<EntityAff Nom="Lapin" X="76" Y="50" />
+	<EntityAff Nom="Lapin" X="50" Y="51" />
+	<EntityAff Nom="Lapin" X="51" Y="51" />
+	<EntityAff Nom="Lapin" X="55" Y="51" />
+	<EntityAff Nom="Lapin" X="57" Y="51" />
+	<EntityAff Nom="Lapin" X="60" Y="51" />
+	<EntityAff Nom="Lapin" X="62" Y="51" />
+	<EntityAff Nom="Lapin" X="71" Y="51" />
+	<EntityAff Nom="Lapin" X="54" Y="52" />
+	<EntityAff Nom="Lapin" X="55" Y="52" />
+	<EntityAff Nom="Lapin" X="63" Y="52" />
+	<EntityAff Nom="Lapin" X="75" Y="52" />
+	<EntityAff Nom="Lapin" X="50" Y="53" />
+	<EntityAff Nom="Lapin" X="51" Y="53" />
+	<EntityAff Nom="Lapin" X="53" Y="53" />
+	<EntityAff Nom="Lapin" X="55" Y="53" />
+	<EntityAff Nom="Lapin" X="56" Y="53" />
+	<EntityAff Nom="Lapin" X="62" Y="53" />
+	<EntityAff Nom="Lapin" X="64" Y="53" />
+	<EntityAff Nom="Lapin" X="51" Y="54" />
+	<EntityAff Nom="Lapin" X="53" Y="54" />
+	<EntityAff Nom="Lapin" X="54" Y="54" />
+	<EntityAff Nom="Lapin" X="55" Y="54" />
+	<EntityAff Nom="Lapin" X="56" Y="54" />
+	<EntityAff Nom="Lapin" X="61" Y="54" />
+	<EntityAff Nom="Lapin" X="69" Y="54" />
+	<EntityAff Nom="Lapin" X="74" Y="54" />
+	<EntityAff Nom="Lapin" X="51" Y="55" />
+	<EntityAff Nom="Lapin" X="52" Y="55" />
+	<EntityAff Nom="Lapin" X="53" Y="55" />
+	<EntityAff Nom="Lapin" X="57" Y="55" />
+	<EntityAff Nom="Lapin" X="66" Y="55" />
+	<EntityAff Nom="Lapin" X="74" Y="55" />
+	<EntityAff Nom="Lapin" X="75" Y="55" />
+	<EntityAff Nom="Lapin" X="76" Y="55" />
+	<EntityAff Nom="Lapin" X="50" Y="56" />
+	<EntityAff Nom="Lapin" X="54" Y="56" />
+	<EntityAff Nom="Lapin" X="57" Y="56" />
+	<EntityAff Nom="Lapin" X="69" Y="56" />
+	<EntityAff Nom="Lapin" X="72" Y="56" />
+	<EntityAff Nom="Lapin" X="75" Y="56" />
+	<EntityAff Nom="Lapin" X="76" Y="56" />
+	<EntityAff Nom="Lapin" X="50" Y="57" />
+	<EntityAff Nom="Lapin" X="53" Y="57" />
+	<EntityAff Nom="Lapin" X="54" Y="57" />
+	<EntityAff Nom="Lapin" X="57" Y="57" />
+	<EntityAff Nom="Lapin" X="62" Y="57" />
+	<EntityAff Nom="Lapin" X="66" Y="57" />
+	<EntityAff Nom="Lapin" X="70" Y="57" />
+	<EntityAff Nom="Lapin" X="73" Y="57" />
+	<EntityAff Nom="Lapin" X="75" Y="57" />
+	<EntityAff Nom="Lapin" X="51" Y="58" />
+	<EntityAff Nom="Lapin" X="52" Y="58" />
+	<EntityAff Nom="Lapin" X="54" Y="58" />
+	<EntityAff Nom="Lapin" X="55" Y="58" />
+	<EntityAff Nom="Lapin" X="56" Y="58" />
+	<EntityAff Nom="Lapin" X="68" Y="58" />
+	<EntityAff Nom="Lapin" X="50" Y="59" />
+	<EntityAff Nom="Lapin" X="51" Y="59" />
+	<EntityAff Nom="Lapin" X="52" Y="59" />
+	<EntityAff Nom="Lapin" X="53" Y="59" />
+	<EntityAff Nom="Lapin" X="54" Y="59" />
+	<EntityAff Nom="Lapin" X="55" Y="59" />
+	<EntityAff Nom="Lapin" X="56" Y="59" />
+	<EntityAff Nom="Lapin" X="57" Y="59" />
+	<EntityAff Nom="Lapin" X="69" Y="59" />
+	<EntityAff Nom="Lapin" X="75" Y="59" />
+	<EntityAff Nom="Lapin" X="50" Y="60" />
+	<EntityAff Nom="Lapin" X="51" Y="60" />
+	<EntityAff Nom="Lapin" X="54" Y="60" />
+	<EntityAff Nom="Lapin" X="55" Y="60" />
+	<EntityAff Nom="Lapin" X="56" Y="60" />
+	<EntityAff Nom="Lapin" X="57" Y="60" />
+	<EntityAff Nom="Lapin" X="61" Y="60" />
+	<EntityAff Nom="Lapin" X="63" Y="60" />
+	<EntityAff Nom="Lapin" X="66" Y="60" />
+	<EntityAff Nom="Lapin" X="70" Y="60" />
+	<EntityAff Nom="Lapin" X="76" Y="60" />
+	<EntityAff Nom="Lapin" X="50" Y="61" />
+	<EntityAff Nom="Lapin" X="57" Y="61" />
+	<EntityAff Nom="Lapin" X="61" Y="61" />
+	<EntityAff Nom="Lapin" X="62" Y="61" />
+	<EntityAff Nom="Lapin" X="63" Y="61" />
+	<EntityAff Nom="Lapin" X="65" Y="61" />
+	<EntityAff Nom="Lapin" X="66" Y="61" />
+	<EntityAff Nom="Lapin" X="68" Y="61" />
+	<EntityAff Nom="Lapin" X="69" Y="61" />
+	<EntityAff Nom="Lapin" X="74" Y="61" />
+	<EntityAff Nom="Lapin" X="75" Y="61" />
+	<EntityAff Nom="Lapin" X="51" Y="62" />
+	<EntityAff Nom="Lapin" X="54" Y="62" />
+	<EntityAff Nom="Lapin" X="56" Y="62" />
+	<EntityAff Nom="Lapin" X="67" Y="62" />
+	<EntityAff Nom="Lapin" X="72" Y="62" />
+	<EntityAff Nom="Lapin" X="73" Y="62" />
+	<EntityAff Nom="Lapin" X="50" Y="63" />
+	<EntityAff Nom="Lapin" X="51" Y="63" />
+	<EntityAff Nom="Lapin" X="52" Y="63" />
+	<EntityAff Nom="Lapin" X="53" Y="63" />
+	<EntityAff Nom="Lapin" X="54" Y="63" />
+	<EntityAff Nom="Lapin" X="57" Y="63" />
+	<EntityAff Nom="Lapin" X="64" Y="63" />
+	<EntityAff Nom="Lapin" X="66" Y="63" />
+	<EntityAff Nom="Lapin" X="67" Y="63" />
+	<EntityAff Nom="Lapin" X="69" Y="63" />
+	<EntityAff Nom="Lapin" X="71" Y="63" />
+	<EntityAff Nom="Lapin" X="74" Y="63" />
+	<EntityAff Nom="Lapin" X="75" Y="63" />
+	<EntityAff Nom="Lapin" X="49" Y="64" />
+	<EntityAff Nom="Lapin" X="50" Y="64" />
+	<EntityAff Nom="Lapin" X="52" Y="64" />
+	<EntityAff Nom="Lapin" X="54" Y="64" />
+	<EntityAff Nom="Lapin" X="56" Y="64" />
+	<EntityAff Nom="Lapin" X="57" Y="64" />
+	<EntityAff Nom="Lapin" X="60" Y="64" />
+	<EntityAff Nom="Lapin" X="63" Y="64" />
+	<EntityAff Nom="Lapin" X="64" Y="64" />
+	<EntityAff Nom="Lapin" X="70" Y="64" />
+	<EntityAff Nom="Lapin" X="71" Y="64" />
+	<EntityAff Nom="Lapin" X="73" Y="64" />
+	<EntityAff Nom="Lapin" X="74" Y="64" />
+	<EntityAff Nom="Lapin" X="49" Y="65" />
+	<EntityAff Nom="Lapin" X="50" Y="65" />
+	<EntityAff Nom="Lapin" X="51" Y="65" />
+	<EntityAff Nom="Lapin" X="52" Y="65" />
+	<EntityAff Nom="Lapin" X="53" Y="65" />
+	<EntityAff Nom="Lapin" X="54" Y="65" />
+	<EntityAff Nom="Lapin" X="56" Y="65" />
+	<EntityAff Nom="Lapin" X="60" Y="65" />
+	<EntityAff Nom="Lapin" X="61" Y="65" />
+	<EntityAff Nom="Lapin" X="64" Y="65" />
+	<EntityAff Nom="Lapin" X="66" Y="65" />
+	<EntityAff Nom="Lapin" X="67" Y="65" />
+	<EntityAff Nom="Lapin" X="68" Y="65" />
+	<EntityAff Nom="Lapin" X="70" Y="65" />
+	<EntityAff Nom="Lapin" X="71" Y="65" />
+	<EntityAff Nom="Lapin" X="72" Y="65" />
+	<EntityAff Nom="Lapin" X="50" Y="66" />
+	<EntityAff Nom="Lapin" X="53" Y="66" />
+	<EntityAff Nom="Lapin" X="55" Y="66" />
+	<EntityAff Nom="Lapin" X="56" Y="66" />
+	<EntityAff Nom="Lapin" X="69" Y="66" />
+	<EntityAff Nom="Lapin" X="73" Y="66" />
+	<EntityAff Nom="Lapin" X="52" Y="67" />
+	<EntityAff Nom="Lapin" X="53" Y="67" />
+	<EntityAff Nom="Lapin" X="54" Y="67" />
+	<EntityAff Nom="Lapin" X="55" Y="67" />
+	<EntityAff Nom="Lapin" X="56" Y="67" />
+	<EntityAff Nom="Lapin" X="61" Y="67" />
+	<EntityAff Nom="Lapin" X="62" Y="67" />
+	<EntityAff Nom="Lapin" X="64" Y="67" />
+	<EntityAff Nom="Lapin" X="65" Y="67" />
+	<EntityAff Nom="Lapin" X="66" Y="67" />
+	<EntityAff Nom="Lapin" X="67" Y="67" />
+	<EntityAff Nom="Lapin" X="68" Y="67" />
+	<EntityAff Nom="Lapin" X="70" Y="67" />
+	<EntityAff Nom="Lapin" X="49" Y="68" />
+	<EntityAff Nom="Lapin" X="50" Y="68" />
+	<EntityAff Nom="Lapin" X="52" Y="68" />
+	<EntityAff Nom="Lapin" X="53" Y="68" />
+	<EntityAff Nom="Lapin" X="54" Y="68" />
+	<EntityAff Nom="Lapin" X="55" Y="68" />
+	<EntityAff Nom="Lapin" X="61" Y="68" />
+	<EntityAff Nom="Lapin" X="63" Y="68" />
+	<EntityAff Nom="Lapin" X="65" Y="68" />
+	<EntityAff Nom="Lapin" X="67" Y="68" />
+	<EntityAff Nom="Lapin" X="48" Y="69" />
+	<EntityAff Nom="Lapin" X="50" Y="69" />
+	<EntityAff Nom="Lapin" X="51" Y="69" />
+	<EntityAff Nom="Lapin" X="52" Y="69" />
+	<EntityAff Nom="Lapin" X="53" Y="69" />
+	<EntityAff Nom="Lapin" X="54" Y="69" />
+	<EntityAff Nom="Lapin" X="60" Y="69" />
+	<EntityAff Nom="Lapin" X="62" Y="69" />
+	<EntityAff Nom="Lapin" X="63" Y="69" />
+	<EntityAff Nom="Lapin" X="64" Y="69" />
+	<EntityAff Nom="Lapin" X="65" Y="69" />
+	<EntityAff Nom="Lapin" X="67" Y="69" />
+	<EntityAff Nom="Lapin" X="68" Y="69" />
+	<EntityAff Nom="Lapin" X="47" Y="70" />
+	<EntityAff Nom="Lapin" X="48" Y="70" />
+	<EntityAff Nom="Lapin" X="49" Y="70" />
+	<EntityAff Nom="Lapin" X="52" Y="70" />
+	<EntityAff Nom="Lapin" X="53" Y="70" />
+	<EntityAff Nom="Lapin" X="54" Y="70" />
+	<EntityAff Nom="Lapin" X="55" Y="70" />
+	<EntityAff Nom="Lapin" X="56" Y="70" />
+	<EntityAff Nom="Lapin" X="61" Y="70" />
+	<EntityAff Nom="Lapin" X="62" Y="70" />
+	<EntityAff Nom="Lapin" X="63" Y="70" />
+	<EntityAff Nom="Lapin" X="64" Y="70" />
+	<EntityAff Nom="Lapin" X="65" Y="70" />
+	<EntityAff Nom="Lapin" X="66" Y="70" />
+	<EntityAff Nom="Lapin" X="67" Y="70" />
+	<EntityAff Nom="Lapin" X="46" Y="71" />
+	<EntityAff Nom="Lapin" X="49" Y="71" />
+	<EntityAff Nom="Lapin" X="50" Y="71" />
+	<EntityAff Nom="Lapin" X="51" Y="71" />
+	<EntityAff Nom="Lapin" X="52" Y="71" />
+	<EntityAff Nom="Lapin" X="60" Y="71" />
+	<EntityAff Nom="Lapin" X="61" Y="71" />
+	<EntityAff Nom="Lapin" X="63" Y="71" />
+	<EntityAff Nom="Lapin" X="65" Y="71" />
+	<EntityAff Nom="Lapin" X="67" Y="71" />
+	<EntityAff Nom="Lapin" X="68" Y="71" />
+	<EntityAff Nom="Lapin" X="46" Y="72" />
+	<EntityAff Nom="Lapin" X="51" Y="72" />
+	<EntityAff Nom="Lapin" X="52" Y="72" />
+	<EntityAff Nom="Lapin" X="53" Y="72" />
+	<EntityAff Nom="Lapin" X="60" Y="72" />
+	<EntityAff Nom="Lapin" X="61" Y="72" />
+	<EntityAff Nom="Lapin" X="62" Y="72" />
+	<EntityAff Nom="Lapin" X="63" Y="72" />
+	<EntityAff Nom="Lapin" X="47" Y="73" />
+	<EntityAff Nom="Lapin" X="49" Y="73" />
+	<EntityAff Nom="Lapin" X="51" Y="73" />
+	<EntityAff Nom="Lapin" X="52" Y="73" />
+	<EntityAff Nom="Lapin" X="54" Y="73" />
+	<EntityAff Nom="Lapin" X="60" Y="73" />
+	<EntityAff Nom="Lapin" X="61" Y="73" />
+	<EntityAff Nom="Lapin" X="62" Y="73" />
+	<EntityAff Nom="Lapin" X="64" Y="73" />
+	<EntityAff Nom="Lapin" X="66" Y="73" />
+	<EntityAff Nom="Lapin" X="67" Y="73" />
+	<EntityAff Nom="Lapin" X="52" Y="74" />
+	<EntityAff Nom="Lapin" X="54" Y="74" />
+	<EntityAff Nom="Lapin" X="55" Y="74" />
+	<EntityAff Nom="Lapin" X="61" Y="74" />
+	<EntityAff Nom="Lapin" X="62" Y="74" />
+	<EntityAff Nom="Lapin" X="63" Y="74" />
+	<EntityAff Nom="Lapin" X="65" Y="74" />
+	<EntityAff Nom="Lapin" X="48" Y="75" />
+	<EntityAff Nom="Lapin" X="49" Y="75" />
+	<EntityAff Nom="Lapin" X="57" Y="75" />
+	<EntityAff Nom="Lapin" X="60" Y="75" />
+	<EntityAff Nom="Lapin" X="63" Y="75" />
+	<EntityAff Nom="Lapin" X="45" Y="76" />
+	<EntityAff Nom="Lapin" X="47" Y="76" />
+	<EntityAff Nom="Lapin" X="48" Y="76" />
+	<EntityAff Nom="Lapin" X="50" Y="76" />
+	<EntityAff Nom="Lapin" X="51" Y="76" />
+	<EntityAff Nom="Lapin" X="56" Y="76" />
+	<EntityAff Nom="Lapin" X="61" Y="76" />
+	<EntityAff Nom="Lapin" X="45" Y="77" />
+	<EntityAff Nom="Lapin" X="49" Y="77" />
+	<EntityAff Nom="Lapin" X="52" Y="77" />
+	<EntityAff Nom="Lapin" X="54" Y="77" />
+	<EntityAff Nom="Lapin" X="55" Y="77" />
+	<EntityAff Nom="Lapin" X="58" Y="77" />
+	<EntityAff Nom="Lapin" X="59" Y="77" />
+	<EntityAff Nom="Lapin" X="62" Y="77" />
+	<EntityAff Nom="Lapin" X="64" Y="77" />
+	<EntityAff Nom="Lapin" X="50" Y="78" />
+	<EntityAff Nom="Lapin" X="51" Y="78" />
+	<EntityAff Nom="Lapin" X="45" Y="79" />
+	<EntityAff Nom="Lapin" X="46" Y="79" />
+	<EntityAff Nom="Lapin" X="48" Y="79" />
+	<EntityAff Nom="Lapin" X="50" Y="79" />
+	<EntityAff Nom="Lapin" X="55" Y="79" />
+	<EntityAff Nom="Lapin" X="45" Y="80" />
+	<EntityAff Nom="Lapin" X="46" Y="80" />
+	<EntityAff Nom="Lapin" X="52" Y="80" />
+	<EntityAff Nom="Lapin" X="53" Y="80" />
+	<EntityAff Nom="Lapin" X="59" Y="80" />
+	<EntityAff Nom="Lapin" X="43" Y="81" />
+	<EntityAff Nom="Lapin" X="44" Y="81" />
+	<EntityAff Nom="Lapin" X="49" Y="81" />
+	<EntityAff Nom="Lapin" X="58" Y="81" />
+	<EntityAff Nom="Lapin" X="44" Y="82" />
+	<EntityAff Nom="Lapin" X="46" Y="82" />
+	<EntityAff Nom="Lapin" X="47" Y="82" />
+	<EntityAff Nom="Lapin" X="54" Y="82" />
+	<EntityAff Nom="Lapin" X="43" Y="83" />
+	<EntityAff Nom="Lapin" X="45" Y="83" />
+	<EntityAff Nom="Lapin" X="47" Y="83" />
+	<EntityAff Nom="Lapin" X="52" Y="83" />
+	<EntityAff Nom="Lapin" X="53" Y="83" />
+	<EntityAff Nom="Lapin" X="54" Y="83" />
+	<EntityAff Nom="Lapin" X="42" Y="84" />
+	<EntityAff Nom="Lapin" X="44" Y="84" />
+	<EntityAff Nom="Lapin" X="50" Y="84" />
+	<EntityAff Nom="Lapin" X="45" Y="85" />
+	<EntityAff Nom="Lapin" X="46" Y="85" />
+	<EntityAff Nom="Lapin" X="50" Y="85" />
+	<EntityAff Nom="Lapin" X="45" Y="86" />
+	<EntityAff Nom="Lapin" X="48" Y="86" />
+	<EntityAff Nom="Lapin" X="51" Y="86" />
+	<EntityAff Nom="Lapin" X="46" Y="87" />
+	<EntityAff Nom="Lapin" X="48" Y="87" />
+	<EntityAff Nom="Lapin" X="35" Y="88" />
+	<EntityAff Nom="Lapin" X="41" Y="88" />
+	<EntityAff Nom="Lapin" X="47" Y="88" />
+	<EntityAff Nom="Lapin" X="48" Y="88" />
+	<EntityAff Nom="Lapin" X="49" Y="88" />
+	<EntityAff Nom="Lapin" X="38" Y="89" />
+	<EntityAff Nom="Lapin" X="39" Y="89" />
+	<EntityAff Nom="Lapin" X="42" Y="89" />
+	<EntityAff Nom="Lapin" X="43" Y="89" />
+	<EntityAff Nom="Lapin" X="45" Y="89" />
+	<EntityAff Nom="Lapin" X="47" Y="89" />
+	<EntityAff Nom="Lapin" X="50" Y="89" />
+	<EntityAff Nom="Lapin" X="41" Y="90" />
+	<EntityAff Nom="Lapin" X="45" Y="90" />
+	<EntityAff Nom="Lapin" X="46" Y="90" />
+	<EntityAff Nom="Lapin" X="38" Y="91" />
+	<EntityAff Nom="Lapin" X="44" Y="91" />
+	<EntityAff Nom="Lapin" X="32" Y="92" />
+	<EntityAff Nom="Lapin" X="35" Y="92" />
+	<EntityAff Nom="Lapin" X="39" Y="92" />
+	<EntityAff Nom="Lapin" X="41" Y="92" />
+	<EntityAff Nom="Lapin" X="44" Y="92" />
+	<EntityAff Nom="Lapin" X="40" Y="93" />
+	<EntityAff Nom="Lapin" X="43" Y="93" />
+	<EntityAff Nom="Lapin" X="32" Y="94" />
+	<EntityAff Nom="Lapin" X="33" Y="94" />
+	<EntityAff Nom="Lapin" X="31" Y="95" />
+	<EntityAff Nom="Lapin" X="33" Y="95" />
+	<EntityAff Nom="Lapin" X="34" Y="95" />
+	<EntityAff Nom="Lapin" X="37" Y="95" />
+	<EntityAff Nom="Lapin" X="38" Y="95" />
+	<EntityAff Nom="Lapin" X="39" Y="95" />
+	<EntityAff Nom="Lapin" X="45" Y="95" />
+	<EntityAff Nom="Lapin" X="28" Y="96" />
+	<EntityAff Nom="Lapin" X="30" Y="96" />
+	<EntityAff Nom="Lapin" X="31" Y="96" />
+	<EntityAff Nom="Lapin" X="32" Y="96" />
+	<EntityAff Nom="Lapin" X="33" Y="96" />
+	<EntityAff Nom="Lapin" X="34" Y="96" />
+	<EntityAff Nom="Lapin" X="35" Y="96" />
+	<EntityAff Nom="Lapin" X="40" Y="96" />
+	<EntityAff Nom="Lapin" X="43" Y="96" />
+	<EntityAff Nom="Lapin" X="29" Y="97" />
+	<EntityAff Nom="Lapin" X="30" Y="97" />
+	<EntityAff Nom="Lapin" X="31" Y="97" />
+	<EntityAff Nom="Lapin" X="32" Y="97" />
+	<EntityAff Nom="Lapin" X="33" Y="97" />
+	<EntityAff Nom="Lapin" X="34" Y="97" />
+	<EntityAff Nom="Lapin" X="35" Y="97" />
+	<EntityAff Nom="Lapin" X="29" Y="98" />
+	<EntityAff Nom="Lapin" X="31" Y="98" />
+	<EntityAff Nom="Lapin" X="33" Y="98" />
+	<EntityAff Nom="Lapin" X="34" Y="98" />
+	<EntityAff Nom="Lapin" X="27" Y="99" />
+	<EntityAff Nom="Lapin" X="28" Y="99" />
+	<EntityAff Nom="Lapin" X="29" Y="99" />
+	<EntityAff Nom="Lapin" X="31" Y="99" />
+	<EntityAff Nom="Lapin" X="32" Y="99" />
+	<EntityAff Nom="Lapin" X="33" Y="99" />
+	<EntityAff Nom="Lapin" X="34" Y="99" />
+</Environement>

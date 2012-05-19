@@ -1,0 +1,39 @@
+unsigned int normal[SIZE_MATRIX_DEP][SIZE_MATRIX_DEP]={{0,100,0},{100,0,100},{0,100,0}};
+unsigned int fix[SIZE_MATRIX_DEP][SIZE_MATRIX_DEP]={{0,0,0},{0,0,0},{0,0,0}};
+
+Entity e0;
+e0.SetImage("images/1.png");
+e0.SetDemieVie(0);
+e0.SetDeplacement(fix);
+environement->AddEntity(e0);
+
+Entity e1;
+e1.SetImage("images/2.png");
+e1.SetDemieVie(0);
+e1.SetDeplacement(normal);
+environement->AddEntity(e1);
+
+vector<Entity*> v;
+
+v.clear();
+
+SemieSitue s0("e0 tu e1");
+v.push_back(environement->GetEntityByName("Entity_1"));
+v.push_back(environement->GetEntityByName("Entity_0"));
+s0.SetReactif(v);
+v.clear();
+v.push_back(environement->GetEntityByName("Entity_0"));
+v.push_back(environement->GetEntityByName("Entity_0"));
+s0.SetProduits(v);
+s0.Reactif_use_parent.push_back(false);
+s0.Reactif_use_parent.push_back(false);
+s0.SetProbabilite(100);
+environement->AddSemieSitue(s0);
+
+v.clear();
+
+Carte.Push(Entity_Aff(environement->GetEntityByName("Entity_0")),SizeX/2,SizeY/2);
+
+for (unsigned int j=0;j<SizeY;j+=5)
+    for (unsigned int i=0;i<SizeY;i+=5)
+Carte.Push(Entity_Aff(environement->GetEntityByName("Entity_1")),i,j);
