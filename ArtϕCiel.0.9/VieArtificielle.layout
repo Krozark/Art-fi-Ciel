@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="ComportementsModification.cpp" open="1" top="1" tabpos="0">
+	<File name="ComportementsModification.cpp" open="0" top="0" tabpos="0">
 		<Cursor position="1158" topLine="0" />
 	</File>
 	<File name="ComportementsModification.hpp" open="0" top="0" tabpos="4">
@@ -13,8 +13,8 @@
 	<File name="ComportementsSelector.hpp" open="0" top="0" tabpos="5">
 		<Cursor position="733" topLine="0" />
 	</File>
-	<File name="CourbesViewer.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="698" topLine="3" />
+	<File name="CourbesViewer.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="498" topLine="0" />
 	</File>
 	<File name="CourbesViewer.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="732" topLine="0" />
@@ -32,16 +32,16 @@
 		<Cursor position="286" topLine="0" />
 	</File>
 	<File name="EnvironementViewer.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="486" topLine="0" />
+		<Cursor position="6808" topLine="185" />
 	</File>
 	<File name="EnvironementViewer.hpp" open="0" top="0" tabpos="2">
 		<Cursor position="1231" topLine="27" />
 	</File>
 	<File name="MainWindows.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="4463" topLine="18" />
+		<Cursor position="5050" topLine="90" />
 	</File>
 	<File name="MainWindows.hpp" open="0" top="0" tabpos="2">
-		<Cursor position="537" topLine="13" />
+		<Cursor position="794" topLine="13" />
 	</File>
 	<File name="Pile.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="1799" topLine="42" />
@@ -50,10 +50,10 @@
 		<Cursor position="1099" topLine="6" />
 	</File>
 	<File name="QSFMLCanvas.cpp" open="0" top="0" tabpos="0">
-		<Cursor position="3339" topLine="70" />
+		<Cursor position="2466" topLine="73" />
 	</File>
 	<File name="QSFMLCanvas.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="183" topLine="41" />
+		<Cursor position="1442" topLine="50" />
 	</File>
 	<File name="Vector.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="1660" topLine="0" />
@@ -68,10 +68,10 @@
 		<Cursor position="116" topLine="0" />
 	</File>
 	<File name="entity.cpp" open="0" top="0" tabpos="1">
-		<Cursor position="914" topLine="3" />
+		<Cursor position="1079" topLine="27" />
 	</File>
 	<File name="entity.hpp" open="0" top="0" tabpos="3">
-		<Cursor position="1960" topLine="40" />
+		<Cursor position="3241" topLine="12" />
 	</File>
 	<File name="entity_aff.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="427" topLine="0" />
