@@ -21,7 +21,7 @@ void CourbesViewer::OnUpdate()
         {
             YMax_1=*YMax;
             sf::View CurrentView(sf::FloatRect(0,0,MAX_X_COURBE,YMax_1));
-            SetView(CurrentView);
+            setView(CurrentView);
         }
 
         if (size2>0)
@@ -33,16 +33,16 @@ void CourbesViewer::OnUpdate()
             for (unsigned int j=1;j<size2;++j) //pour tous les point
             {
                  sf::ConvexShape Line(4);
-                 Line.SetOutlineColor(C);
-                 Line.SetFillColor(C);
-                 Line.SetOutlineThickness(3);
+                 Line.setOutlineColor(C);
+                 Line.setFillColor(C);
+                 Line.setOutlineThickness(3);
 
-                 Line.SetPoint(0,sf::Vector2f(j,YMax_1-(*vec)[j]));
-                 Line.SetPoint(3,sf::Vector2f(j,YMax_1-(*vec)[j]));
-                 Line.SetPoint(1,sf::Vector2f(j-1,YMax_1-(*vec)[j-1]));
-                 Line.SetPoint(2,sf::Vector2f(j-1,YMax_1-(*vec)[j-1]));
+                 Line.setPoint(0,sf::Vector2f(j,YMax_1-(*vec)[j]));
+                 Line.setPoint(3,sf::Vector2f(j,YMax_1-(*vec)[j]));
+                 Line.setPoint(1,sf::Vector2f(j-1,YMax_1-(*vec)[j-1]));
+                 Line.setPoint(2,sf::Vector2f(j-1,YMax_1-(*vec)[j-1]));
 
-                 Draw(Line);
+                 draw(Line);
 
             }
 
@@ -55,6 +55,6 @@ void CourbesViewer::OnUpdate()
 void CourbesViewer::resizeEvent(QResizeEvent * event)
 {
     sf::View CurrentView(sf::FloatRect(0,0,MAX_X_COURBE,YMax_1));
-    SetView(CurrentView);
+    setView(CurrentView);
 };
 

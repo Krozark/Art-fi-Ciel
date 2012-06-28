@@ -2,7 +2,7 @@
 <Environement SizeX="100" SizeY="100" PAS_DEPLACEMENT="10" >
 	<Entity Nom="Lapin" DemieVie="500" >
 		<Description>Description</Description>
-		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/lapin.png</Image>
+		<Image>/media/dev/Projet/git/Art-fi-Ciel/ArtϕCiel.0.9/images/lapin_B.png</Image>
 		<Couleur R="239" G="215" B="187"/>
 		<Parent>
 		</Parent>
@@ -20,7 +20,7 @@
 	</Entity>
 	<Entity Nom="Loup" DemieVie="1000" >
 		<Description>Description</Description>
-		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/loup.png</Image>
+		<Image>/media/dev/Projet/git/Art-fi-Ciel/ArtϕCiel.0.9/images/loup.png</Image>
 		<Couleur R="194" G="154" B="88"/>
 		<Parent>
 		</Parent>
@@ -38,7 +38,7 @@
 	</Entity>
 	<Entity Nom="Mur" DemieVie="0" >
 		<Description>Description</Description>
-		<Image>/home/maxime/Bureau/VieArtificielle/ArtϕCiel.0.9/images/f.png</Image>
+		<Image>/media/dev/Projet/git/Art-fi-Ciel/ArtϕCiel.0.9/images/x.png</Image>
 		<Couleur R="24" G="170" B="230"/>
 		<Parent>
 		</Parent>
@@ -56,7 +56,7 @@
 	</Entity>
 	<Entity Nom="bébé lapin" DemieVie="300" >
 		<Description>Description</Description>
-		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/lapin_B.png</Image>
+		<Image>/media/dev/Projet/git/Art-fi-Ciel/ArtϕCiel.0.9/images/lapin.png</Image>
 		<Couleur R="56" G="166" B="228"/>
 		<Parent>
 			<Nom>Lapin</Nom>
@@ -75,7 +75,7 @@
 	</Entity>
 	<Entity Nom="Bébé loup" DemieVie="200" >
 		<Description>Description</Description>
-		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/loup_F.png</Image>
+		<Image>/media/dev/Projet/git/Art-fi-Ciel/ArtϕCiel.0.9/images/loup_M.png</Image>
 		<Couleur R="172" G="3" B="139"/>
 		<Parent>
 			<Nom>Loup</Nom>
@@ -94,7 +94,7 @@
 	</Entity>
 	<Entity Nom="Sang" DemieVie="10" >
 		<Description>Description</Description>
-		<Image>/home/maxime/Documents/Projet/VieArtificielle/ArtϕCiel.0.9/images/4.png</Image>
+		<Image>/media/dev/Projet/git/Art-fi-Ciel/ArtϕCiel.0.9/images/sang.png</Image>
 		<Couleur R="222" G="185" B="26"/>
 		<Parent>
 		</Parent>

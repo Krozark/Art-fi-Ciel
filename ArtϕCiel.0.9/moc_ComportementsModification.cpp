@@ -1,8 +1,8 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ComportementsModification.hpp'
 **
-** Created: Thu Jan 26 17:20:25 2012
-**      by: The Qt Meta Object Compiler version 62 (Qt 4.7.4)
+** Created: Thu Jun 28 00:03:06 2012
+**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.1)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -10,8 +10,8 @@
 #include "ComportementsModification.hpp"
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ComportementsModification.hpp' doesn't include <QObject>."
-#elif Q_MOC_OUTPUT_REVISION != 62
-#error "This file was generated using the moc from 4.7.4. It"
+#elif Q_MOC_OUTPUT_REVISION != 63
+#error "This file was generated using the moc from 4.8.1. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -20,7 +20,7 @@ QT_BEGIN_MOC_NAMESPACE
 static const uint qt_meta_data_ComportementModification[] = {
 
  // content:
-       5,       // revision
+       6,       // revision
        0,       // classname
        0,    0, // classinfo
        2,   14, // methods
@@ -44,9 +44,27 @@ static const char qt_meta_stringdata_ComportementModification[] = {
     "save()\0"
 };
 
+void ComportementModification::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        ComportementModification *_t = static_cast<ComportementModification *>(_o);
+        switch (_id) {
+        case 0: _t->HasSave(); break;
+        case 1: _t->save(); break;
+        default: ;
+        }
+    }
+    Q_UNUSED(_a);
+}
+
+const QMetaObjectExtraData ComportementModification::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
 const QMetaObject ComportementModification::staticMetaObject = {
     { &QDialog::staticMetaObject, qt_meta_stringdata_ComportementModification,
-      qt_meta_data_ComportementModification, 0 }
+      qt_meta_data_ComportementModification, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
@@ -72,11 +90,8 @@ int ComportementModification::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        switch (_id) {
-        case 0: HasSave(); break;
-        case 1: save(); break;
-        default: ;
-        }
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 2;
     }
     return _id;
@@ -90,7 +105,7 @@ void ComportementModification::HasSave()
 static const uint qt_meta_data_SemieSitueModification[] = {
 
  // content:
-       5,       // revision
+       6,       // revision
        0,       // classname
        0,    0, // classinfo
        2,   14, // methods
@@ -112,9 +127,26 @@ static const char qt_meta_stringdata_SemieSitueModification[] = {
     "SetComportement(SemieSitue*)\0"
 };
 
+void SemieSitueModification::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+{
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        SemieSitueModification *_t = static_cast<SemieSitueModification *>(_o);
+        switch (_id) {
+        case 0: _t->save(); break;
+        case 1: _t->SetComportement((*reinterpret_cast< SemieSitue*(*)>(_a[1]))); break;
+        default: ;
+        }
+    }
+}
+
+const QMetaObjectExtraData SemieSitueModification::staticMetaObjectExtraData = {
+    0,  qt_static_metacall 
+};
+
 const QMetaObject SemieSitueModification::staticMetaObject = {
     { &ComportementModification::staticMetaObject, qt_meta_stringdata_SemieSitueModification,
-      qt_meta_data_SemieSitueModification, 0 }
+      qt_meta_data_SemieSitueModification, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
@@ -140,11 +172,8 @@ int SemieSitueModification::qt_metacall(QMetaObject::Call _c, int _id, void **_a
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        switch (_id) {
-        case 0: save(); break;
-        case 1: SetComportement((*reinterpret_cast< SemieSitue*(*)>(_a[1]))); break;
-        default: ;
-        }
+        if (_id < 2)
+            qt_static_metacall(this, _c, _id, _a);
         _id -= 2;
     }
     return _id;

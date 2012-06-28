@@ -40,11 +40,11 @@ Entity::Entity(string parent,string parent2)
 
 void Entity::SetImage(const string& img)
 {
-    texture.LoadFromFile(img);
+    texture.loadFromFile(img);
     FileName=img;
     not_initialise=true;
-    sprite.SetTexture(texture);
-    sprite.SetTextureRect(sf::IntRect(0,0,10,10));
+    sprite.setTexture(texture);
+    sprite.setTextureRect(sf::IntRect(0,0,10,10));
 };
 
 void Entity::Write(FILE* F)

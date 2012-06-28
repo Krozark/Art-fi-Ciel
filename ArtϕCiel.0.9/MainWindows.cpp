@@ -109,7 +109,7 @@ void MainWindows::OnInit()
 
 void MainWindows::SlotChangeFrameTime(int T)
 {
-    EnvViewer->SetFramerateLimit(T);
+    EnvViewer->setFramerateLimit(T);
 };
 void MainWindows::SlotSelectedEntity(Entity* E)
 {

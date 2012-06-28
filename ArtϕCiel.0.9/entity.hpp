@@ -93,12 +93,12 @@ class Entity
         {
             if (not_initialise)
             {
-                sprite.SetTexture(texture);
-                sprite.SetTextureRect (sf::IntRect(0,0,10,10));
+                sprite.setTexture(texture);
+                sprite.setTextureRect (sf::IntRect(0,0,10,10));
                 not_initialise=false;
             }
-            sprite.SetPosition(x*PAS_DEPLACEMENT,y*PAS_DEPLACEMENT);
-            App->Draw(sprite);
+            sprite.setPosition(x*PAS_DEPLACEMENT,y*PAS_DEPLACEMENT);
+            App->draw(sprite);
         };
 
         Color couleur;

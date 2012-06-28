@@ -38,7 +38,7 @@ public :
 
     unsigned int GetWidth  	() const {return (unsigned int)this->size().width();}
     unsigned int GetHeight () const {return (unsigned int)  this->size().height();};
-    bool Activate(bool Active) {  if (Active) return SetActive(); else return true;}
+    bool Activate(bool Active) {  if (Active) return setActive(); else return true;}
 
 private :
 

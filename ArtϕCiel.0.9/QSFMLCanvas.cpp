@@ -88,7 +88,7 @@ void QSFMLCanvas::showEvent(QShowEvent*)
         #endif
 
         // Create the SFML window with the widget handle
-        Create(winId());
+        static_cast<sf::Window*>(this)->create(winId());
 
         // Let the derived class do its specific stuff
         OnInit();
@@ -111,6 +111,6 @@ void QSFMLCanvas::paintEvent(QPaintEvent*)
     // Let the derived class do its specific stuff
     OnUpdate();
     // Display on screen
-    Display();
-    Clear();
+    display();
+    clear();
 }

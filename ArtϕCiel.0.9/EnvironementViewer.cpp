@@ -42,29 +42,29 @@ void EnvironementViewer::OnUpdate()
                 if (CurrentSelectedEntity != NULL)
                 {
                     sf::ConvexShape Line(4);
-                    Line.SetOutlineThickness(1);
-                    Line.SetPoint(0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
-                    Line.SetPoint(3,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
-                    Line.SetPoint(1,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
-                    Line.SetPoint(2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
-                    Line.SetOutlineColor(sf::Color::Green);
-                    Line.SetFillColor(sf::Color::Green);
-                    Draw(Line);
+                    Line.setOutlineThickness(1);
+                    Line.setPoint(0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
+                    Line.setPoint(3,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
+                    Line.setPoint(1,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
+                    Line.setPoint(2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
+                    Line.setOutlineColor(sf::Color::Green);
+                    Line.setFillColor(sf::Color::Green);
+                    draw(Line);
                 }
             }
             else  if (action ==  SELECTED)
             {
                 sf::ConvexShape shape(4);
-                shape.SetFillColor(sf::Color::Transparent);
-                shape.SetOutlineColor(sf::Color::Green);
-                shape.SetOutlineThickness(1);
+                shape.setFillColor(sf::Color::Transparent);
+                shape.setOutlineColor(sf::Color::Green);
+                shape.setOutlineThickness(1);
 
-                shape.SetPoint (0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
-                shape.SetPoint (1,sf::Vector2f(MoussPoint.x2,MoussPoint.y1));
-                shape.SetPoint (2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
-                shape.SetPoint (3,sf::Vector2f(MoussPoint.x1,MoussPoint.y2));
+                shape.setPoint (0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
+                shape.setPoint (1,sf::Vector2f(MoussPoint.x2,MoussPoint.y1));
+                shape.setPoint (2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
+                shape.setPoint (3,sf::Vector2f(MoussPoint.x1,MoussPoint.y2));
 
-                Draw(shape);
+                draw(shape);
             }
         }
     }
@@ -181,14 +181,14 @@ void EnvironementViewer::mouseMoveEvent ( QMouseEvent * event )//permet de gere 
                 MoussPoint.y2=event->pos().y();
 
                 sf::ConvexShape Line(4);
-                Line.SetOutlineThickness(1);
-                Line.SetPoint(0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
-                Line.SetPoint(3,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
-                Line.SetPoint(1,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
-                Line.SetPoint(2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
-                Line.SetOutlineColor(sf::Color::Green);
-                Line.SetFillColor(sf::Color::Green);
-                Draw(Line);
+                Line.setOutlineThickness(1);
+                Line.setPoint(0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
+                Line.setPoint(3,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
+                Line.setPoint(1,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
+                Line.setPoint(2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
+                Line.setOutlineColor(sf::Color::Green);
+                Line.setFillColor(sf::Color::Green);
+                draw(Line);
             }
         }
 
@@ -198,16 +198,16 @@ void EnvironementViewer::mouseMoveEvent ( QMouseEvent * event )//permet de gere 
             MoussPoint.y2=event->pos().y();
 
             sf::ConvexShape shape(4);
-            shape.SetFillColor(sf::Color::Transparent);
-            shape.SetOutlineColor(sf::Color::Green);
-            shape.SetOutlineThickness(1);
+            shape.setFillColor(sf::Color::Transparent);
+            shape.setOutlineColor(sf::Color::Green);
+            shape.setOutlineThickness(1);
 
-            shape.SetPoint (0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
-            shape.SetPoint (1,sf::Vector2f(MoussPoint.x2,MoussPoint.y1));
-            shape.SetPoint (2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
-            shape.SetPoint (3,sf::Vector2f(MoussPoint.x1,MoussPoint.y2));
+            shape.setPoint (0,sf::Vector2f(MoussPoint.x1,MoussPoint.y1));
+            shape.setPoint (1,sf::Vector2f(MoussPoint.x2,MoussPoint.y1));
+            shape.setPoint (2,sf::Vector2f(MoussPoint.x2,MoussPoint.y2));
+            shape.setPoint (3,sf::Vector2f(MoussPoint.x1,MoussPoint.y2));
 
-            Draw(shape);
+            draw(shape);
         }
         else  if (action == REMOVE)
         {
