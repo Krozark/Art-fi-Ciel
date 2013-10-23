@@ -1,4 +1,7 @@
 #include "EntityModification.hpp"
+#include <QMessageBox>
+#include <QColorDialog>
+#include <QFileDialog>
 
 EntityModification::~EntityModification()
 {

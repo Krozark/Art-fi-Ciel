@@ -1,7 +1,15 @@
 #ifndef ENTITY_MODIFICATION_HPP
 #define ENTITY_MODIFCATION_HPP
 
-#include <QtGui>
+#include <QDialog>
+#include <QDoubleSpinBox>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QTextEdit>
+#include <QComboBox>
+#include <QCheckBox>
+#include <QLabel>
+#include <QGridLayout>
 #include <SFML/Graphics.hpp>
 
 #include "EnvironementViewer.hpp"

@@ -1,7 +1,8 @@
 #ifndef COMPORTEMENT_SELECTOR_HPP
 #define COMPORTEMENT_SELECTOR_HPP
 
-#include <QtGui>
+#include <QWidget>
+#include <QVBoxLayout>
 #include "PushButtonIndex.hpp"
 #include "reaction.hpp"
 

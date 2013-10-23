@@ -1,7 +1,9 @@
 #ifndef ENTITYSELECTOR_HPP
 #define ENTITYSELECTOR_HPP
 
-#include <QtGui>
+#include <QWidget>
+#include <QVBoxLayout>
+
 #include "EnvironementViewer.hpp"
 #include <vector>
 #include "PushButtonIndex.hpp"

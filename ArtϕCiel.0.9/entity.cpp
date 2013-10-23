@@ -40,11 +40,18 @@ Entity::Entity(string parent,string parent2)
 
 void Entity::SetImage(const string& img)
 {
-    texture.loadFromFile(img);
     FileName=img;
-    not_initialise=true;
-    sprite.setTexture(texture);
-    sprite.setTextureRect(sf::IntRect(0,0,10,10));
+    SetTexture();
+}
+
+void Entity::SetTexture()
+{
+    texture.loadFromFile(FileName);
+    not_initialise=false;
+    sprite.setTexture(texture,true);
+    sf::Vector2u size = texture.getSize();
+    sf::Vector2f scale((float)PAS_DEPLACEMENT/size.x,(float)PAS_DEPLACEMENT/size.y);
+    sprite.setScale(scale);
 };
 
 void Entity::Write(FILE* F)

@@ -6,8 +6,8 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <SFML/Graphics.hpp>
-#include <Qt/qwidget.h>
-#include <Qt/qtimer.h>
+#include <QWidget>
+#include <QTimer>
 #include <QResizeEvent>
 
 

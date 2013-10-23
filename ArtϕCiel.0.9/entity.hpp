@@ -93,9 +93,7 @@ class Entity
         {
             if (not_initialise)
             {
-                sprite.setTexture(texture);
-                sprite.setTextureRect (sf::IntRect(0,0,10,10));
-                not_initialise=false;
+                SetTexture();
             }
             sprite.setPosition(x*PAS_DEPLACEMENT,y*PAS_DEPLACEMENT);
             App->draw(sprite);
@@ -128,6 +126,8 @@ class Entity
         unsigned int deplacement[SIZE_MATRIX_DEP][SIZE_MATRIX_DEP];
         unsigned int deplacementCumule[SIZE_MATRIX_DEP][SIZE_MATRIX_DEP];
         unsigned int SumDep;
+
+        void SetTexture();
 
         //graphic
         Texture texture;

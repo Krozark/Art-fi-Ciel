@@ -1,7 +1,16 @@
 #ifndef COMPORTEMENTS_MODIFICATION
 #define COMPORTEMENTS_MODIFICATION
 
-#include <QtGui>
+#include <QDialog>
+#include <QDoubleSpinBox>
+#include <QPushButton>
+#include <QLineEdit>
+#include <QTextEdit>
+#include <QComboBox>
+#include <QCheckBox>
+#include <QLabel>
+#include <QGridLayout>
+
 #include "reaction.hpp"
 #include "EnvironementViewer.hpp"
 

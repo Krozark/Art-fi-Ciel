@@ -1,7 +1,12 @@
 #ifndef WINDOWDOCK_HPP
 #define WINDOWDOCK_HPP
 
-#include <QtGui>
+#include <QDockWidget>
+#include <QPushButton>
+#include <QSpinBox>
+#include <QtWidgets>
+#include <QHBoxLayout>
+#include <QCheckBox>
 
 class WindowDock : public QDockWidget
 {

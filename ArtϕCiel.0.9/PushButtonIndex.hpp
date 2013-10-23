@@ -1,7 +1,9 @@
 #ifndef PUSHBUTTONINDEX_HPP
 #define PUSHBUTTONINDEX_HPP
 
-#include <QtGui>
+#include <QPushButton>
+#include <QMenu>
+#include <QAction>
 
 //bouton qui renvoie l'index quand il est cliqué
 class QPushButtonIndex : public QPushButton
