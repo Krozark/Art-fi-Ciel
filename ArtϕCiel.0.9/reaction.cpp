@@ -146,19 +146,19 @@ void SemieSitue::Run(const unsigned int X,const unsigned int Y)
             }
             if (ok)
             { // si on a tout se qu'il faut
+                random_shuffle(Dispo.begin(),Dispo.end());
                 for (unsigned int i=0;i<size_ToPop;++i)
                 {
                     Carte.Pop(ToPop[i].x,ToPop[i].y);
                     CarteCpy[ToPop[i].y][ToPop[i].x]=NULL;
                     Dispo.push_back(ToPop[i]);
                 }
-                ///random_shuffle(Dispo.begin(),Dispo.end());
-
+                size_Dispo += size_ToPop -1;
                 for (unsigned int i=0;i<size_prod;++i)//pour tous les resultat
                 {
                     ///TODO Remplacer un element (lapin) par le type exacte qui à été pris parmis l'arbre d'héritage (bébé lapin)
-                    Carte.Push(Entity_Aff(Produits[i]),Dispo[i].x,Dispo[i].y);
-                    CarteCpy[Dispo[i].y][Dispo[i].x]=NULL;
+                    Carte.Push(Entity_Aff(Produits[i]),Dispo[size_Dispo-i].x,Dispo[size_Dispo-i].y);
+                    CarteCpy[Dispo[size_Dispo-i].y][Dispo[size_Dispo-i].x]=NULL;
                 }
             }
         }
