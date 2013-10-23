@@ -3,7 +3,7 @@ Art-fi-Ciel
 
 A projet to simulate virtual life
 
-Use SFML2 and Qt
+Use SFML2, Qt and libxml2
 
 video:
 
