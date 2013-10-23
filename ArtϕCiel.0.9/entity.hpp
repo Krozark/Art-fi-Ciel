@@ -79,14 +79,14 @@ class Entity
             memcpy(d,deplacementCumule,sizeof(unsigned int)*SIZE_MATRIX_DEP*SIZE_MATRIX_DEP);
         };
 
-        inline unsigned int GetSumDeplacement(){return SumDep;};
-        inline const unsigned int GetDemieVie(){return demie_vie;};
-        inline const double GetProbaPassage(){return ProbaPassage;};
+        inline unsigned int GetSumDeplacement()const{return SumDep;};
+        inline unsigned int GetDemieVie()const{return demie_vie;};
+        inline double GetProbaPassage()const{return ProbaPassage;};
         //graphic
         //inline const Color GetColor(){return sprite.GetColor();};
         //affichage
-        inline const string GetNom(){return nom;};
-        inline const string GetDescription(){return description;};
+        inline const string GetNom()const{return nom;};
+        inline const string GetDescription()const{return description;};
         inline void HaveToBeInit(){not_initialise=true;};
 
         inline void Draw(sf::RenderTarget* App,const unsigned int x,const unsigned int y)

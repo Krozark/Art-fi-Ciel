@@ -15,11 +15,11 @@ class Vector
         /// ajoute un element et renvoie son adresse
         T* Add(const T& v);
         /// realou la taille nesessaire, et renvoie la différence d'adresse en int*sizeof(T)
-        const int SetMax(const unsigned int m);
+        int SetMax(const unsigned int m);
         /// vide tout
         void Clear();
-        const unsigned int GetMax(){return max;};
-        const unsigned int Size(){return count;};
+        unsigned int GetMax()const{return max;};
+        unsigned int Size()const{return count;};
 
     private:
         Pile<unsigned int> casesLibres;
@@ -71,7 +71,7 @@ T* Vector<T>::Add(const T& v)
     return res;
 };
 template <class T>
-const int Vector<T>::SetMax(const unsigned int m)
+int Vector<T>::SetMax(const unsigned int m)
 {
     T* old=values;
     if (m > max)

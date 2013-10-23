@@ -26,10 +26,10 @@ class Pile
         ///supprime tout
         void Clear();
         /// noubre d'element acctuelement
-        const unsigned int Size(){return count;};
+        unsigned int Size()const{return count;};
 
-        ///renvoie un bool pour sacoir si l'element est presente dasn ma pile
-        const bool Contain(const T& v);
+        ///renvoie un bool pour savoir si l'element est presente dasn ma pile
+        bool Contain(const T& v)const;
         /// cherche le premier element de valeur val et le supprime
         void FindAndRemove(const T& v);
         /// idem que push
@@ -94,7 +94,7 @@ void Pile<T>::Clear()
     }
 };
 template <class T>
-const bool Pile<T>::Contain(const T& v)
+bool Pile<T>::Contain(const T& v)const
 {
   bool res=false;
   struct chaine<T>* e=elem;

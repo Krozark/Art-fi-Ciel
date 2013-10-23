@@ -128,8 +128,8 @@ void EnvironementViewer::mouseReleaseEvent (QMouseEvent *event)        //permet 
         int incx=(MoussPoint.x1<MoussPoint.x2)?1:-1;
         int incy=(MoussPoint.y1<MoussPoint.y2)?1:-1;
 
-        for (unsigned int j=MoussPoint.y1;j!=MoussPoint.y2 && j >= 0 && j <= SizeY;j+=incy)
-            for(unsigned int i=MoussPoint.x1;i!=MoussPoint.x2 && i>=0 && i<= SizeX;i+=incx)
+        for (int j=MoussPoint.y1;j!=MoussPoint.y2 && j >= 0 && j <= SizeY;j+=incy)
+            for(int i=MoussPoint.x1;i!=MoussPoint.x2 && i>=0 && i<= SizeX;i+=incx)
                 environement->RemoveEntity(i,j);
      }
      /*else  if (action == REMOVE)

@@ -275,7 +275,7 @@ void Environement::AddEntity(const Entity& E)
 
     EntityIndexed.clear();
     EntityIndexed.resize(Entity::GetMaxIndex());
-    for (int i=0;i<=_size;++i)
+    for (unsigned int i=0;i<=_size;++i)
         EntityIndexed[Entites[i].GetIndex()]=&(Entites[i]);
 
 };

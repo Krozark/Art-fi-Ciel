@@ -171,7 +171,7 @@ void SemieSitue::init()
     Reactif_Nb.clear();
     Reactif_Nb.resize(Entity::GetMaxIndex());
 
-    for (unsigned int i=0;i<Entity::GetMaxIndex();++i)
+    for (int i=0;i<Entity::GetMaxIndex();++i)
     {
         Reactif_Nb[i].Recursif=0;
         Reactif_Nb[i].NonRecursif=0;

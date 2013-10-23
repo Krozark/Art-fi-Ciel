@@ -17,8 +17,8 @@ class Entity_Aff
         inline void Draw(sf::RenderTarget* App) {parent->Draw(App,x,y);};
         bool Move();
         void SetPosition(const unsigned int X,const unsigned int Y);
-        const unsigned int GetX(){return x;};
-        const unsigned int GetY(){return y;};
+        unsigned int GetX()const{return x;};
+        unsigned int GetY()const{return y;};
 
     private :
         unsigned int x,y;
