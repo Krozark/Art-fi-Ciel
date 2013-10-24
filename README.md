@@ -10,3 +10,13 @@ video:
 http://www.dailymotion.com/video/xrtfsl_artyciel
 
 http://www.dailymotion.com/video/xrtffx_artyciel_tech
+
+Compilation
+===========
+
+```shell
+    path$: cd ArtϕCiel
+    path/ArtϕCiel$ qmake
+    path/ArtϕCiel$ make
+```
+
